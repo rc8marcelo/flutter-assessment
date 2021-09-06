@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "424113154299",
+    "project_id": "coderbyte-eigital",
+    "storage_bucket": "coderbyte-eigital.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424113154299:android:f355722253d46760a6685e",
+        "android_client_info": {
+          "package_name": "com.rmarcelo.assessment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "424113154299-tt9esnj9s8994dnhhkphrciqpqba5ba4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rmarcelo.assessment",
+            "certificate_hash": "218f357216dc60b22f6e771913e4672f3bedb9a4"
+          }
+        },
+        {
+          "client_id": "424113154299-i4q7n8lct74sth3iom801e3dapileii0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc6KNKHuh8aiFWe52MC0_qF_tim60dEkg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "424113154299-i4q7n8lct74sth3iom801e3dapileii0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
