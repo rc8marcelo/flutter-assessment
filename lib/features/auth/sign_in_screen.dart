@@ -10,6 +10,7 @@ import 'cubit/auth_cubit.dart';
 import 'repo/auth_failure.dart';
 
 const _title = 'Coderbyte Technical Assessment';
+const _anonSignIn = 'Anonymous Sign In';
 const _msgSignIn = 'Login';
 
 class SignInScreen extends StatelessWidget {
@@ -68,9 +69,17 @@ extension _Widgets on SignInScreen {
                   await context.read<AuthCubit>().signInWithGoogle();
                 }),
                 const SizedBox(height: 16),
+                GoogleAuthButton(
+                  onPressed: () async {
+                    await context.read<AuthCubit>().signInAnonymously();
+                  },
+                  text: _anonSignIn,
+                ),
+                const SizedBox(height: 16),
                 FacebookAuthButton(onPressed: () async {
                   await context.read<AuthCubit>().signInWithFacebook();
                 }),
+                const SizedBox(height: 16),
                 SizedBox(height: 16),
                 _loader(),
               ],

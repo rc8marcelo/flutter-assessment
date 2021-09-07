@@ -13,6 +13,9 @@ abstract class IAuthRepo {
   ///Calls the Facebook Sign in workflow
   Future<Option<AuthFailure>> signInWithFacebook();
 
+  ///Calls firebaseAuth to sign in anonymously
+  Future<Option<AuthFailure>> signInAnonymously();
+
   ///Check if the user is signed in
   bool get isUserSignedIn;
 }
@@ -71,4 +74,14 @@ class AuthRepo implements IAuthRepo {
 
   @override
   bool get isUserSignedIn => _firAuth.currentUser != null;
+
+  @override
+  Future<Option<AuthFailure>> signInAnonymously() async {
+    try {
+      await _firAuth.signInAnonymously();
+      return none();
+    } on Exception catch (e) {
+      return some(AuthFailure.signInFailed(e.toString()));
+    }
+  }
 }

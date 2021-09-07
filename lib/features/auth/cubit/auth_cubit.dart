@@ -41,4 +41,15 @@ class AuthCubit extends Cubit<AuthState> {
       (failure) => AuthState.error(failure),
     );
   }
+
+  ///Calls the repository to sign in with Facebook
+  Future<void> signInAnonymously() async {
+    emit(const AuthState.loading());
+    final result = await _repo.signInAnonymously();
+    emit(const AuthState.initial());
+    result.fold(
+      () => emit(const AuthState.signedIn()),
+      (failure) => AuthState.error(failure),
+    );
+  }
 }
