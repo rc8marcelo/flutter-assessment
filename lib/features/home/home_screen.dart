@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_assessment/core/routing/router.gr.dart';
 
 const _title = 'Home';
+const _mapTab = 'Map';
+const _newsTab = 'Newsfeed';
+const _calcTab = 'Calculator';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -25,15 +28,15 @@ class HomeScreen extends StatelessWidget {
           onTap: tabsRouter.setActiveIndex,
           items: [
             BottomNavigationBarItem(
-              label: 'Map',
+              label: _mapTab,
               icon: Icon(Icons.map),
             ),
             BottomNavigationBarItem(
-              label: 'Newsfeed',
+              label: _newsTab,
               icon: Icon(Icons.feed),
             ),
             BottomNavigationBarItem(
-              label: 'Calculator',
+              label: _calcTab,
               icon: Icon(Icons.calculate),
             ),
           ],

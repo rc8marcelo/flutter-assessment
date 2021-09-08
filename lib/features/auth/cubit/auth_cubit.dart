@@ -1,12 +1,12 @@
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
-import 'package:flutter_assessment/features/auth/repo/auth_failure.dart';
-import 'package:flutter_assessment/features/auth/repo/repo_auth.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-part 'auth_state.dart';
+import '../repo/auth_failure.dart';
+import '../repo/repo_auth.dart';
+
 part 'auth_cubit.freezed.dart';
+part 'auth_state.dart';
 
 @injectable
 class AuthCubit extends Cubit<AuthState> {

@@ -43,6 +43,9 @@ dependencies:
   #Routing
   auto_route: ^2.2.0
 
+  #mdas calculations
+  math_expressions: ^2.2.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
