@@ -5,7 +5,8 @@ import '../../core/di/injection.dart';
 import 'cubit/calculator_cubit.dart';
 import 'widgets/calculator_input.dart';
 
-//! https://gist.github.com/kendfinger/962ce4c770ae6ae78fcb
+const _result = 'Result:';
+const _errorMsg = 'Invalid input';
 
 class CalculatorScreen extends StatelessWidget {
   const CalculatorScreen({Key? key}) : super(key: key);
@@ -14,7 +15,14 @@ class CalculatorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => locator<CalculatorCubit>(),
-      child: Padding(
+      child: _body(),
+    );
+  }
+}
+
+extension _Widgets on CalculatorScreen {
+  ///The body of the calculator screen
+  Widget _body() => Padding(
         padding: const EdgeInsets.all(16.0),
         child: BlocBuilder<CalculatorCubit, CalculatorState>(
           builder: (context, state) {
@@ -22,33 +30,35 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 CalculatorInput(),
                 Text(
-                  'Result:',
+                  _result,
                   style: Theme.of(context).textTheme.headline2!,
                 ),
-                state.maybeWhen(
-                  calculated: (result) => Text(
-                    result,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline2!
-                        .copyWith(color: Colors.green),
-                  ),
-                  error: () => Text(
-                    'Invalid input',
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline2!
-                        .copyWith(color: Colors.red),
-                  ),
-                  orElse: () => Container(),
-                ),
+                _resultText(context, state),
               ],
             );
           },
         ),
-      ),
-    );
-  }
+      );
+
+  ///Creates the text to display depending on the [state]
+  Widget _resultText(BuildContext context, CalculatorState state) =>
+      state.maybeWhen(
+        calculated: (result) => Text(
+          result,
+          textAlign: TextAlign.center,
+          style: Theme.of(context)
+              .textTheme
+              .headline2!
+              .copyWith(color: Colors.green),
+        ),
+        error: () => Text(
+          _errorMsg,
+          textAlign: TextAlign.center,
+          style: Theme.of(context)
+              .textTheme
+              .headline2!
+              .copyWith(color: Colors.red),
+        ),
+        orElse: () => Container(),
+      );
 }
