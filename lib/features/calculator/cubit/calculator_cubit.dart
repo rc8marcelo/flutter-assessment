@@ -24,11 +24,15 @@ class CalculatorCubit extends Cubit<CalculatorState> {
     var expr = input;
 
     expr = expr.replaceAllMapped(_enclosingParenthesis, (match) {
+      print(match.group(0)!);
+      print(match.group(1)!);
+      print(_operation.hasMatch(match.group(1)!));
       return (match.group(0)! == '(${match.group(1)!})') &&
               !_operation.hasMatch(match.group(1)!)
-          ? '*${match.group(1)!}'
-          : '*${_calculate(match.group(1)!)}';
+          ? '*(${match.group(1)!})'
+          : '*(${_calculate(match.group(1)!).replaceAll(')(', ')*(')})';
     });
+    print(expr);
 
     try {
       Parser p = new Parser();
