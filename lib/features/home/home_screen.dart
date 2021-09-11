@@ -13,17 +13,22 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
+      backgroundColor: Color(0xFFF4F4F4),
       appBarBuilder: (context, _) {
-        return AppBar(title: Text(_title));
+        return AppBar(
+          leading: AutoBackButton(),
+          title: Text(_title),
+        );
       },
       routes: const [
-        MapScreen(),
-        NewsFeedScreen(),
-        CalculatorScreen(),
+        MapRoute(),
+        NewsRouter(),
+        CalculatorRoute(),
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
         return BottomNavigationBar(
           backgroundColor: Color(0xFFDEDEDE),
+          unselectedItemColor: Color(0xFF212121),
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,
           items: [

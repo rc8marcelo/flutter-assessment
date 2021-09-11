@@ -8,11 +8,17 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.14.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+
+  # For date formatting
+  intl: ^0.17.0
+
+  #to open site
+  url_launcher: ^6.0.10
 
   # Firebase
   firebase_core: ^1.6.0
@@ -39,6 +45,7 @@ dependencies:
 
   # Architecture
   dartz: ^0.10.0-nullsafety.2
+  kt_dart: ^0.9.1
 
   #Routing
   auto_route: ^2.2.0
@@ -46,13 +53,19 @@ dependencies:
   #mdas calculations
   math_expressions: ^2.2.0
 
+  # REST API
+  dio: ^4.0.0
+  retrofit: ^2.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   #Code Generation
-  build_runner: ^2.1.2
   freezed: ^0.14.1
+  build_runner: ^2.1.2
+  json_serializable: ^4.1.4
+  retrofit_generator: ^2.0.1
   injectable_generator: ^1.4.1
   auto_route_generator: ^2.1.0
 

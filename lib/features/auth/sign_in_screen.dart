@@ -37,12 +37,10 @@ extension _Functions on SignInScreen {
   ///Listens for changes in [state] and act accordingly
   void _listenForStateChanges(BuildContext context, AuthState state) {
     state.maybeWhen(
-      signedIn: () => AutoRouter.of(context).replace(HomeScreen()),
-      error: (failure) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          TextSnackbar(failure.message),
-        );
-      },
+      signedIn: () => AutoRouter.of(context).replace(HomeRoute()),
+      error: (failure) => ScaffoldMessenger.of(context).showSnackBar(
+        TextSnackbar(failure.errorMessage),
+      ),
       orElse: () {},
     );
   }

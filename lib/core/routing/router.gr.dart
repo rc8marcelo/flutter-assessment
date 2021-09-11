@@ -8,10 +8,12 @@ import 'package:auto_route/auto_route.dart' as _i1;
 import 'package:flutter/material.dart' as _i2;
 
 import '../../features/auth/sign_in_screen.dart' as _i3;
-import '../../features/calculator/calculator_screen.dart' as _i7;
+import '../../features/calculator/calculator_screen.dart' as _i6;
 import '../../features/home/home_screen.dart' as _i4;
 import '../../features/map/map_screen.dart' as _i5;
-import '../../features/newsfeed/newsfeed_screen.dart' as _i6;
+import '../../features/news/models/news_article.dart' as _i9;
+import '../../features/news/news_details_screen.dart' as _i8;
+import '../../features/news/newsfeed_screen.dart' as _i7;
 
 class Router extends _i1.RootStackRouter {
   Router([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey])
@@ -19,71 +21,112 @@ class Router extends _i1.RootStackRouter {
 
   @override
   final Map<String, _i1.PageFactory> pagesMap = {
-    SignInScreen.name: (routeData) => _i1.MaterialPageX<dynamic>(
+    SignInRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (_) {
           return const _i3.SignInScreen();
         }),
-    HomeScreen.name: (routeData) => _i1.MaterialPageX<dynamic>(
+    HomeRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (_) {
           return const _i4.HomeScreen();
         }),
-    MapScreen.name: (routeData) => _i1.MaterialPageX<dynamic>(
+    MapRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (_) {
           return const _i5.MapScreen();
         }),
-    NewsFeedScreen.name: (routeData) => _i1.MaterialPageX<dynamic>(
+    NewsRouter.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i6.NewsFeedScreen();
+          return const _i1.EmptyRouterPage();
         }),
-    CalculatorScreen.name: (routeData) => _i1.MaterialPageX<dynamic>(
+    CalculatorRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i7.CalculatorScreen();
+          return const _i6.CalculatorScreen();
+        }),
+    NewsFeedRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i7.NewsFeedScreen();
+        }),
+    NewsDetailsRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (data) {
+          final args = data.argsAs<NewsDetailsRouteArgs>();
+          return _i8.NewsDetailsScreen(article: args.article, key: args.key);
         })
   };
 
   @override
   List<_i1.RouteConfig> get routes => [
-        _i1.RouteConfig(SignInScreen.name, path: '/'),
-        _i1.RouteConfig(HomeScreen.name, path: '/home-screen', children: [
-          _i1.RouteConfig(MapScreen.name, path: 'map-screen'),
-          _i1.RouteConfig(NewsFeedScreen.name, path: 'news-feed-screen'),
-          _i1.RouteConfig(CalculatorScreen.name, path: 'calculator-screen')
+        _i1.RouteConfig(SignInRoute.name, path: '/'),
+        _i1.RouteConfig(HomeRoute.name, path: '/home-screen', children: [
+          _i1.RouteConfig(MapRoute.name, path: 'map-screen'),
+          _i1.RouteConfig(NewsRouter.name,
+              path: 'empty-router-page',
+              children: [
+                _i1.RouteConfig(NewsFeedRoute.name, path: ''),
+                _i1.RouteConfig(NewsDetailsRoute.name,
+                    path: 'news-details-screen')
+              ]),
+          _i1.RouteConfig(CalculatorRoute.name, path: 'calculator-screen')
         ])
       ];
 }
 
-class SignInScreen extends _i1.PageRouteInfo {
-  const SignInScreen() : super(name, path: '/');
+class SignInRoute extends _i1.PageRouteInfo {
+  const SignInRoute() : super(name, path: '/');
 
-  static const String name = 'SignInScreen';
+  static const String name = 'SignInRoute';
 }
 
-class HomeScreen extends _i1.PageRouteInfo {
-  const HomeScreen({List<_i1.PageRouteInfo>? children})
+class HomeRoute extends _i1.PageRouteInfo {
+  const HomeRoute({List<_i1.PageRouteInfo>? children})
       : super(name, path: '/home-screen', initialChildren: children);
 
-  static const String name = 'HomeScreen';
+  static const String name = 'HomeRoute';
 }
 
-class MapScreen extends _i1.PageRouteInfo {
-  const MapScreen() : super(name, path: 'map-screen');
+class MapRoute extends _i1.PageRouteInfo {
+  const MapRoute() : super(name, path: 'map-screen');
 
-  static const String name = 'MapScreen';
+  static const String name = 'MapRoute';
 }
 
-class NewsFeedScreen extends _i1.PageRouteInfo {
-  const NewsFeedScreen() : super(name, path: 'news-feed-screen');
+class NewsRouter extends _i1.PageRouteInfo {
+  const NewsRouter({List<_i1.PageRouteInfo>? children})
+      : super(name, path: 'empty-router-page', initialChildren: children);
 
-  static const String name = 'NewsFeedScreen';
+  static const String name = 'NewsRouter';
 }
 
-class CalculatorScreen extends _i1.PageRouteInfo {
-  const CalculatorScreen() : super(name, path: 'calculator-screen');
+class CalculatorRoute extends _i1.PageRouteInfo {
+  const CalculatorRoute() : super(name, path: 'calculator-screen');
 
-  static const String name = 'CalculatorScreen';
+  static const String name = 'CalculatorRoute';
+}
+
+class NewsFeedRoute extends _i1.PageRouteInfo {
+  const NewsFeedRoute() : super(name, path: '');
+
+  static const String name = 'NewsFeedRoute';
+}
+
+class NewsDetailsRoute extends _i1.PageRouteInfo<NewsDetailsRouteArgs> {
+  NewsDetailsRoute({required _i9.NewsArticle article, _i2.Key? key})
+      : super(name,
+            path: 'news-details-screen',
+            args: NewsDetailsRouteArgs(article: article, key: key));
+
+  static const String name = 'NewsDetailsRoute';
+}
+
+class NewsDetailsRouteArgs {
+  const NewsDetailsRouteArgs({required this.article, this.key});
+
+  final _i9.NewsArticle article;
+
+  final _i2.Key? key;
 }

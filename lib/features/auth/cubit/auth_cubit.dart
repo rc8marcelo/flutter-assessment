@@ -11,14 +11,18 @@ part 'auth_state.dart';
 @injectable
 class AuthCubit extends Cubit<AuthState> {
   final IAuthRepo _repo;
-  AuthCubit(this._repo) : super(const AuthState.initial());
+  AuthCubit(this._repo) : super(const AuthState.loading());
 
   ///Calls the repository to check if the user is signed in
-  void checkIfUserIsSignedIn() => emit(
-        _repo.isUserSignedIn
-            ? const AuthState.signedIn()
-            : const AuthState.initial(),
-      );
+  Future<void> checkIfUserIsSignedIn() async {
+    final isSignedIn = _repo.isUserSignedIn;
+    await Future.delayed(
+      const Duration(milliseconds: 50),
+      () => emit(
+        isSignedIn ? const AuthState.signedIn() : const AuthState.initial(),
+      ),
+    );
+  }
 
   ///Calls the repository to sign in with Google
   Future<void> signInWithGoogle() async {

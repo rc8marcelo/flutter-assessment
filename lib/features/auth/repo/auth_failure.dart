@@ -16,7 +16,7 @@ class AuthFailure with _$AuthFailure {
 
 extension AuthFailureFunctions on AuthFailure {
   ///Gets the message of the failure
-  String get message => when(
+  String get errorMessage => when(
         signInFailed: (msg) => 'Sign in failed. $msg',
         noAccessToken: () => 'No access token.',
         noUser: () => 'No user found.',
