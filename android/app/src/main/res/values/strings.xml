@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Coderbyte Technical Assessment</string>
+    <string name="facebook_app_id">275175827496724</string>
+    <string name="fb_login_protocol_scheme">fb275175827496724</string>
+</resources>

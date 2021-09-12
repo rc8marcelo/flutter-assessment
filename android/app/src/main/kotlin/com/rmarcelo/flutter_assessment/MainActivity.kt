@@ -1,4 +1,4 @@
-package com.rmarcelo.flutter_assessment
+package com.rmarcelo.assessment
 
 import io.flutter.embedding.android.FlutterActivity
 
