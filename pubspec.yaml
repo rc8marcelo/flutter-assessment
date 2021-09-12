@@ -57,6 +57,13 @@ dependencies:
   dio: ^4.0.0
   retrofit: ^2.0.1
 
+  # Maps
+  location: ^4.3.0
+  geocoding: ^2.0.0
+  geolocator: ^7.0.3
+  google_maps_flutter: ^2.0.6
+  flutter_polyline_points: ^1.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

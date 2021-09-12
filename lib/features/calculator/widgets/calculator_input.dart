@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assessment/features/calculator/cubit/calculator_cubit.dart';
+import '../cubit/calculator_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 const _msgCalculate = 'Calculate';
@@ -13,6 +13,13 @@ class CalculatorInput extends StatefulWidget {
 
 class _CalculatorInputState extends State<CalculatorInput> {
   final TextEditingController _controller = TextEditingController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(

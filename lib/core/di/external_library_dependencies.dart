@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
+import 'package:location/location.dart';
 
 @module
 abstract class ExternalLibraryDependencies {
@@ -10,4 +11,8 @@ abstract class ExternalLibraryDependencies {
   ///Instance of [Dio]
   @lazySingleton
   Dio get dioInstance => Dio();
+
+  ///Instance of location
+  @lazySingleton
+  Location get location => Location();
 }

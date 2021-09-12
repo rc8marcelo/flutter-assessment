@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter_assessment/features/calculator/calculator_screen.dart';
-import 'package:flutter_assessment/features/map/map_screen.dart';
-import 'package:flutter_assessment/features/news/news_details_screen.dart';
-import 'package:flutter_assessment/features/news/newsfeed_screen.dart';
+import '../../features/calculator/calculator_screen.dart';
+import '../../features/map/map_screen.dart';
+import '../../features/news/news_details_screen.dart';
+import '../../features/news/newsfeed_screen.dart';
 
 import '../../features/auth/sign_in_screen.dart';
 import '../../features/home/home_screen.dart';

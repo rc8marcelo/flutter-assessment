@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assessment/core/widgets/text_snackbar.dart';
+import '../../core/widgets/text_snackbar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'models/news_article.dart';
