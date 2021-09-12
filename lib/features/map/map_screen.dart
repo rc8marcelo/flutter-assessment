@@ -11,6 +11,7 @@ import 'repo/maps_failure.dart';
 const _btnRandomLoc = 'Get Random Location';
 const _btnDirections = 'Show directions';
 const _polylineId = 'directions';
+const _blankLoc = LatLng(0, 0);
 
 class MapScreen extends StatefulWidget {
   const MapScreen({Key? key}) : super(key: key);
@@ -70,11 +71,7 @@ extension _Widgets on _MapScreenState {
     final directions = state.directions.getOrElse(() => Directions.empty());
     return Stack(
       children: [
-        _map(
-          directions: directions,
-          markers: state.markers,
-          shouldShowDirections: state.shouldShowDirections,
-        ),
+        _map(state),
         Visibility(
           visible: state.isLoading,
           child: _loader(),
@@ -84,32 +81,32 @@ extension _Widgets on _MapScreenState {
   }
 
   ///Creates the Map UI
-  Widget _map({
-    required Map<MarkerId, Marker> markers,
-    required bool shouldShowDirections,
-    required Directions directions,
-  }) =>
-      Stack(
+  Widget _map(MapState state) => Stack(
         children: [
           GoogleMap(
             myLocationEnabled: false,
             zoomControlsEnabled: false,
             onMapCreated: _onMapCreated,
-            polylines: {
-              Polyline(
-                width: 5,
-                color: Colors.green,
-                polylineId: const PolylineId(_polylineId),
-                points: directions.polylinePoints
-                    .map((point) => LatLng(point.latitude, point.longitude))
-                    .toList(),
-              ),
-            },
-            markers: Set<Marker>.of(markers.values),
+            polylines: state.shouldShowDirections
+                ? {
+                    Polyline(
+                      width: 5,
+                      color: Colors.green,
+                      polylineId: const PolylineId(_polylineId),
+                      points: state.directions
+                          .getOrElse(() => Directions.empty())
+                          .polylinePoints
+                          .map((point) =>
+                              LatLng(point.latitude, point.longitude))
+                          .toList(),
+                    ),
+                  }
+                : {},
+            markers: Set<Marker>.of(state.markers.values),
             initialCameraPosition: _MapScreenState._kInitialPosition,
           ),
           const SizedBox(height: 16),
-          _buttons(shouldShowDirections)
+          _buttons()
         ],
       );
 
@@ -119,7 +116,7 @@ extension _Widgets on _MapScreenState {
       );
 
   ///Create the buttons to control the map
-  Widget _buttons(bool shouldShowDirections) {
+  Widget _buttons() {
     return Builder(
       builder: (context) {
         return Padding(
@@ -136,16 +133,13 @@ extension _Widgets on _MapScreenState {
                 child: const Text(_btnRandomLoc),
               ),
               const SizedBox(width: 16.0),
-              Visibility(
-                visible: shouldShowDirections,
-                child: ElevatedButton(
-                  onPressed: () async {
-                    context
-                        .read<MapBloc>()
-                        .add(const MapEvent.getDirectionsTapped());
-                  },
-                  child: const Text(_btnDirections),
-                ),
+              ElevatedButton(
+                onPressed: () async {
+                  context
+                      .read<MapBloc>()
+                      .add(const MapEvent.getDirectionsTapped());
+                },
+                child: const Text(_btnDirections),
               ),
             ],
           ),

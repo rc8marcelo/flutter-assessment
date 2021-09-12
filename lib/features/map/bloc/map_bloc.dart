@@ -59,6 +59,7 @@ class MapBloc extends Bloc<MapEvent, MapState> {
   ///Gets a random location 10km from the radius of the user's current location
   Stream<MapState> _getRandomLocationTapped() async* {
     yield (state.copyWith(
+      failure: none(),
       isLoading: true,
       shouldShowDirections: false,
     ));
@@ -89,7 +90,6 @@ class MapBloc extends Bloc<MapEvent, MapState> {
         return state.copyWith(
           randomLocation: randomLocation,
           directions: some(directions),
-          shouldShowDirections: true,
           markers: markers,
           isLoading: false,
         );

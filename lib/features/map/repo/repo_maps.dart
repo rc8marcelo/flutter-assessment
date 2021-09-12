@@ -11,7 +11,10 @@ const _statusOk = 'OK';
 const _errNoRoute = 'No routes found.';
 
 abstract class IMapsRepo {
+  ///Gets the user's current location using the [Location] package
   Future<Either<MapsFailure, LatLng>> getUserLocation();
+
+  ///Given an [origin] and [destination], get the direction using Google's Direction API
   Future<Either<MapsFailure, Directions>> getDirections({
     required String origin,
     required String destination,
