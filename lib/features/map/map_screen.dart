@@ -9,9 +9,8 @@ import 'bloc/map_bloc.dart';
 import 'repo/maps_failure.dart';
 
 const _btnRandomLoc = 'Get Random Location';
-const _btnDirections = 'Show directions';
+const _btnDirections = 'Toggle directions';
 const _polylineId = 'directions';
-const _blankLoc = LatLng(0, 0);
 
 class MapScreen extends StatefulWidget {
   const MapScreen({Key? key}) : super(key: key);
@@ -68,7 +67,6 @@ class _MapScreenState extends State<MapScreen> {
 extension _Widgets on _MapScreenState {
   ///Builds the body of the screen
   Widget _buildBody(BuildContext context, MapState state) {
-    final directions = state.directions.getOrElse(() => Directions.empty());
     return Stack(
       children: [
         _map(state),
