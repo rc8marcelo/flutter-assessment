@@ -33,7 +33,7 @@ class NewsRepo implements INewsRepo {
       } else if (response.status == _error) {
         return left(NewsFailure.error(response.message!));
       } else {
-        return left(NewsFailure.unknown());
+        return left(const NewsFailure.unknown());
       }
     } on Exception catch (e) {
       return left(NewsFailure.unknown(message: e.toString()));

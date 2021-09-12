@@ -13,11 +13,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-      backgroundColor: Color(0xFFF4F4F4),
+      backgroundColor: const Color(0xFFF4F4F4),
       appBarBuilder: (context, _) {
         return AppBar(
-          leading: AutoBackButton(),
-          title: Text(_title),
+          leading: const AutoBackButton(),
+          title: const Text(_title),
         );
       },
       routes: const [
@@ -27,11 +27,11 @@ class HomeScreen extends StatelessWidget {
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
         return BottomNavigationBar(
-          backgroundColor: Color(0xFFDEDEDE),
-          unselectedItemColor: Color(0xFF212121),
+          backgroundColor: const Color(0xFFDEDEDE),
+          unselectedItemColor: const Color(0xFF212121),
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,
-          items: [
+          items: const [
             BottomNavigationBarItem(
               label: _mapTab,
               icon: Icon(Icons.map),

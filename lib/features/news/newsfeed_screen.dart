@@ -34,7 +34,8 @@ extension _Functions on NewsFeedScreen {
   ///Listens for changes in [state] and act accordingly
   void _listenForStateChanges(BuildContext context, NewsState state) {
     if (state.failure.isSome()) {
-      final failure = state.failure.getOrElse(() => NewsFailure.unknown());
+      final failure =
+          state.failure.getOrElse(() => const NewsFailure.unknown());
       ScaffoldMessenger.of(context).showSnackBar(
         TextSnackbar(failure.errorMessage),
       );
@@ -116,19 +117,19 @@ extension _Widgets on NewsFeedScreen {
               _errorMsg,
               style: Theme.of(context).textTheme.headline2,
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
                 context.read<NewsCubit>().getHeadlines();
               },
-              child: Text(_retryMsg),
+              child: const Text(_retryMsg),
             ),
           ],
         ),
       );
 
   ///Loading widget
-  Widget _loader() => Center(
+  Widget _loader() => const Center(
         child: CircularProgressIndicator(),
       );
 
@@ -136,7 +137,7 @@ extension _Widgets on NewsFeedScreen {
   Widget _articleCard(BuildContext context, NewsArticle article) => Card(
         child: ListTile(
           minVerticalPadding: 8,
-          trailing: Icon(Icons.chevron_right),
+          trailing: const Icon(Icons.chevron_right),
           title: Text(
             article.title,
             style: Theme.of(context).textTheme.bodyText1,

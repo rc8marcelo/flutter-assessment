@@ -73,7 +73,7 @@ extension _Widgets on NewsDetailsScreen {
             if (loadingProgress == null) {
               return child;
             }
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           },

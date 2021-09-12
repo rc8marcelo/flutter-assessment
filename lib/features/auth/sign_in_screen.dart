@@ -22,7 +22,7 @@ class SignInScreen extends StatelessWidget {
       create: (_) => locator<AuthCubit>()..checkIfUserIsSignedIn(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(_title),
+          title: const Text(_title),
         ),
         body: BlocListener<AuthCubit, AuthState>(
           listener: _listenForStateChanges,
@@ -37,7 +37,7 @@ extension _Functions on SignInScreen {
   ///Listens for changes in [state] and act accordingly
   void _listenForStateChanges(BuildContext context, AuthState state) {
     state.maybeWhen(
-      signedIn: () => AutoRouter.of(context).replace(HomeRoute()),
+      signedIn: () => AutoRouter.of(context).replace(const HomeRoute()),
       error: (failure) => ScaffoldMessenger.of(context).showSnackBar(
         TextSnackbar(failure.errorMessage),
       ),
@@ -78,7 +78,7 @@ extension _Widgets on SignInScreen {
                   await context.read<AuthCubit>().signInWithFacebook();
                 }),
                 const SizedBox(height: 16),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 _loader(),
               ],
             ),
@@ -89,7 +89,7 @@ extension _Widgets on SignInScreen {
   ///Loader
   Widget _loader() => BlocBuilder<AuthCubit, AuthState>(
         builder: (_, state) => state.maybeWhen(
-          loading: () => Center(child: CircularProgressIndicator()),
+          loading: () => const Center(child: CircularProgressIndicator()),
           orElse: () => Container(),
         ),
       );

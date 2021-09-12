@@ -28,7 +28,7 @@ extension _Widgets on CalculatorScreen {
           builder: (context, state) {
             return Column(
               children: [
-                CalculatorInput(),
+                const CalculatorInput(),
                 Text(
                   _result,
                   style: Theme.of(context).textTheme.headline2!,

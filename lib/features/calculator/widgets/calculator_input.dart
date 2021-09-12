@@ -12,21 +12,21 @@ class CalculatorInput extends StatefulWidget {
 }
 
 class _CalculatorInputState extends State<CalculatorInput> {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         TextField(controller: _controller),
-        SizedBox(height: 12),
+        const SizedBox(height: 12),
         ElevatedButton(
           onPressed: () {
             context
                 .read<CalculatorCubit>()
                 .calculateExpression(_controller.text);
           },
-          child: Text(_msgCalculate),
+          child: const Text(_msgCalculate),
         ),
       ],
     );

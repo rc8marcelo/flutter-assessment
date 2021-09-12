@@ -7,14 +7,14 @@ part 'calculator_cubit.freezed.dart';
 part 'calculator_state.dart';
 
 //captures a pair of numbers with an operator
-final RegExp _operation = new RegExp(
+final RegExp _operation = RegExp(
     r"(\d+\.\d+|\d+)(?:\s*)(\+|\-|\*|\/|\%|\^|\(|(\)\()*)(?:\s*)(\d+\.\d+|\d+)");
 //captures expressions within a parenthesis
-final RegExp _enclosingParenthesis = new RegExp(r"\((.*)\)");
+final RegExp _enclosingParenthesis = RegExp(r"\((.*)\)");
 
 @injectable
 class CalculatorCubit extends Cubit<CalculatorState> {
-  CalculatorCubit() : super(CalculatorState.initial());
+  CalculatorCubit() : super(const CalculatorState.initial());
 
   String _calculate(String input) {
     if (!_operation.hasMatch(input)) {
@@ -24,18 +24,14 @@ class CalculatorCubit extends Cubit<CalculatorState> {
     var expr = input;
 
     expr = expr.replaceAllMapped(_enclosingParenthesis, (match) {
-      print(match.group(0)!);
-      print(match.group(1)!);
-      print(_operation.hasMatch(match.group(1)!));
       return (match.group(0)! == '(${match.group(1)!})') &&
               !_operation.hasMatch(match.group(1)!)
           ? '*(${match.group(1)!})'
           : '*(${_calculate(match.group(1)!).replaceAll(')(', ')*(')})';
     });
-    print(expr);
 
     try {
-      Parser p = new Parser();
+      Parser p = Parser();
       Expression exp = p.parse(expr);
       expr = exp.evaluate(EvaluationType.REAL, ContextModel()).toString();
     } on Exception catch (_) {
