@@ -64,6 +64,10 @@ dependencies:
   google_maps_flutter: ^2.0.6
   flutter_polyline_points: ^1.0.0
 
+  # Local DB
+  hive: ^2.0.4
+  hive_flutter: ^1.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -71,6 +75,7 @@ dev_dependencies:
   #Code Generation
   freezed: ^0.14.1
   build_runner: ^2.1.2
+  hive_generator: ^1.1.0
   json_serializable: ^4.1.4
   retrofit_generator: ^2.0.1
   injectable_generator: ^1.4.1

@@ -2,13 +2,14 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import '../../core/routing/router.gr.dart';
 
-const _title = 'Home';
 const _mapTab = 'Map';
+const _titleText = 'Hi, ';
 const _newsTab = 'Newsfeed';
 const _calcTab = 'Calculator';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  final String displayName;
+  const HomeScreen({required this.displayName, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class HomeScreen extends StatelessWidget {
       appBarBuilder: (context, _) {
         return AppBar(
           leading: const AutoBackButton(),
-          title: const Text(_title),
+          title: Text('$_titleText $displayName'),
         );
       },
       routes: const [
