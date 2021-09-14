@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:social_auth_buttons/social_auth_buttons.dart';
 
-import '../../core/di/injection.dart';
 import '../../core/routing/router.gr.dart';
 import '../../core/widgets/text_snackbar.dart';
 import 'cubit/auth_cubit.dart';
@@ -18,16 +17,13 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => locator<AuthCubit>()..checkIfUserIsSignedIn(),
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text(_title),
-        ),
-        body: BlocListener<AuthCubit, AuthState>(
-          listener: _listenForStateChanges,
-          child: _body(),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(_title),
+      ),
+      body: BlocListener<AuthCubit, AuthState>(
+        listener: _listenForStateChanges,
+        child: _body(),
       ),
     );
   }
@@ -37,7 +33,8 @@ extension _Functions on SignInScreen {
   ///Listens for changes in [state] and act accordingly
   void _listenForStateChanges(BuildContext context, AuthState state) {
     state.maybeWhen(
-      signedIn: () => AutoRouter.of(context).replace(const HomeRoute()),
+      signedIn: (user) =>
+          AutoRouter.of(context).replace(HomeRoute(displayName: user.name)),
       error: (failure) => ScaffoldMessenger.of(context).showSnackBar(
         TextSnackbar(failure.errorMessage),
       ),

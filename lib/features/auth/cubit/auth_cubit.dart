@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../repo/auth_failure.dart';
+import '../repo/firebase_user.dart';
 import '../repo/repo_auth.dart';
 
 part 'auth_cubit.freezed.dart';
@@ -11,16 +12,14 @@ part 'auth_state.dart';
 @injectable
 class AuthCubit extends Cubit<AuthState> {
   final IAuthRepo _repo;
-  AuthCubit(this._repo) : super(const AuthState.loading());
+  AuthCubit(this._repo) : super(const AuthState.initial());
 
   ///Calls the repository to check if the user is signed in
   Future<void> checkIfUserIsSignedIn() async {
-    final isSignedIn = _repo.isUserSignedIn;
-    await Future.delayed(
-      const Duration(milliseconds: 50),
-      () => emit(
-        isSignedIn ? const AuthState.signedIn() : const AuthState.initial(),
-      ),
+    final userEither = await _repo.getUser();
+    userEither.fold(
+      (failure) => emit(AuthState.error(failure)),
+      (user) => emit(AuthState.signedIn(user)),
     );
   }
 
@@ -30,8 +29,8 @@ class AuthCubit extends Cubit<AuthState> {
     final result = await _repo.signInWithGoogle();
     emit(const AuthState.initial());
     result.fold(
-      () => emit(const AuthState.signedIn()),
       (failure) => AuthState.error(failure),
+      (user) => emit(AuthState.signedIn(user)),
     );
   }
 
@@ -41,8 +40,8 @@ class AuthCubit extends Cubit<AuthState> {
     final result = await _repo.signInWithFacebook();
     emit(const AuthState.initial());
     result.fold(
-      () => emit(const AuthState.signedIn()),
       (failure) => AuthState.error(failure),
+      (user) => emit(AuthState.signedIn(user)),
     );
   }
 
@@ -52,8 +51,8 @@ class AuthCubit extends Cubit<AuthState> {
     final result = await _repo.signInAnonymously();
     emit(const AuthState.initial());
     result.fold(
-      () => emit(const AuthState.signedIn()),
       (failure) => AuthState.error(failure),
+      (user) => emit(AuthState.signedIn(user)),
     );
   }
 }

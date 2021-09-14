@@ -2,22 +2,26 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 
 import 'auth_failure.dart';
+import 'firebase_user.dart';
+
+const _sessionBox = 'session';
 
 abstract class IAuthRepo {
   ///Calls the Google Sign in workflow
-  Future<Option<AuthFailure>> signInWithGoogle();
+  Future<Either<AuthFailure, FirebaseUser>> signInWithGoogle();
 
   ///Calls the Facebook Sign in workflow
-  Future<Option<AuthFailure>> signInWithFacebook();
+  Future<Either<AuthFailure, FirebaseUser>> signInWithFacebook();
 
   ///Calls firebaseAuth to sign in anonymously
-  Future<Option<AuthFailure>> signInAnonymously();
+  Future<Either<AuthFailure, FirebaseUser>> signInAnonymously();
 
-  ///Check if the user is signed in
-  bool get isUserSignedIn;
+  ///Gets the user from session storage.
+  Future<Either<AuthFailure, FirebaseUser>> getUser();
 }
 
 @LazySingleton(as: IAuthRepo)
@@ -27,12 +31,12 @@ class AuthRepo implements IAuthRepo {
   AuthRepo(this._firAuth);
 
   @override
-  Future<Option<AuthFailure>> signInWithFacebook() async {
+  Future<Either<AuthFailure, FirebaseUser>> signInWithFacebook() async {
     try {
       // Trigger the sign-in flow
       final LoginResult loginResult = await FacebookAuth.instance.login();
       if (loginResult.status != LoginStatus.success) {
-        return some(AuthFailure.signInFailed(loginResult.message!));
+        return left(AuthFailure.signInFailed(loginResult.message!));
       } else if (loginResult.accessToken != null) {
         // Create a credential from the access token
         final OAuthCredential facebookAuthCredential =
@@ -40,16 +44,17 @@ class AuthRepo implements IAuthRepo {
           loginResult.accessToken!.token,
         );
         await _firAuth.signInWithCredential(facebookAuthCredential);
-        return none();
+        final firebaseUser = await _saveUser();
+        return right(firebaseUser);
       }
-      return some(const AuthFailure.noAccessToken());
+      return left(const AuthFailure.noAccessToken());
     } on Exception catch (e) {
-      return some(AuthFailure.signInFailed(e.toString()));
+      return left(AuthFailure.signInFailed(e.toString()));
     }
   }
 
   @override
-  Future<Option<AuthFailure>> signInWithGoogle() async {
+  Future<Either<AuthFailure, FirebaseUser>> signInWithGoogle() async {
     try {
       // Trigger the authentication flow
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
@@ -64,24 +69,49 @@ class AuthRepo implements IAuthRepo {
           idToken: googleAuth.idToken,
         );
         await _firAuth.signInWithCredential(credential);
-        return none();
+        final firebaseUser = await _saveUser();
+        return right(firebaseUser);
       }
-      return some(const AuthFailure.noUser());
+      return left(const AuthFailure.noUser());
     } on Exception catch (e) {
-      return some(AuthFailure.signInFailed(e.toString()));
+      return left(AuthFailure.signInFailed(e.toString()));
     }
   }
 
   @override
-  bool get isUserSignedIn => _firAuth.currentUser != null;
-
-  @override
-  Future<Option<AuthFailure>> signInAnonymously() async {
+  Future<Either<AuthFailure, FirebaseUser>> signInAnonymously() async {
     try {
       await _firAuth.signInAnonymously();
-      return none();
+      final firebaseUser = await _saveUser();
+      return right(firebaseUser);
     } on Exception catch (e) {
-      return some(AuthFailure.signInFailed(e.toString()));
+      return left(AuthFailure.signInFailed(e.toString()));
     }
+  }
+
+  @override
+  Future<Either<AuthFailure, FirebaseUser>> getUser() async {
+    try {
+      final box = await Hive.openBox<FirebaseUser>(_sessionBox);
+      final user = box.values.first;
+      await box.close();
+      return right(user);
+    } on Exception catch (_) {
+      return left(const AuthFailure.noUser());
+    } on Error catch (_) {
+      return left(const AuthFailure.noUser());
+    }
+  }
+
+  ///Saves the created Firebase [User] into local database
+  Future<FirebaseUser> _saveUser({bool isAnonymous = false}) async {
+    final user = _firAuth.currentUser!;
+    final firebaseUser = isAnonymous
+        ? FirebaseUser.anonymous(user.uid)
+        : FirebaseUser.fromFirebase(_firAuth.currentUser!);
+    final box = await Hive.openBox<FirebaseUser>(_sessionBox);
+    await box.add(firebaseUser);
+    await box.close();
+    return firebaseUser;
   }
 }

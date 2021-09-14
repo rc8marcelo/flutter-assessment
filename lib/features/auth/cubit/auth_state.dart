@@ -12,5 +12,5 @@ class AuthState with _$AuthState {
   const factory AuthState.error(AuthFailure failure) = _Error;
 
   ///Successful sign in state
-  const factory AuthState.signedIn() = _SignedIn;
+  const factory AuthState.signedIn(FirebaseUser user) = _SignedIn;
 }

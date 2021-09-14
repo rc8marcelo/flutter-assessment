@@ -30,8 +30,10 @@ class _$AuthStateTearOff {
     );
   }
 
-  _SignedIn signedIn() {
-    return const _SignedIn();
+  _SignedIn signedIn(FirebaseUser user) {
+    return _SignedIn(
+      user,
+    );
   }
 }
 
@@ -45,7 +47,7 @@ mixin _$AuthState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(AuthFailure failure) error,
-    required TResult Function() signedIn,
+    required TResult Function(FirebaseUser user) signedIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,7 +55,7 @@ mixin _$AuthState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
-    TResult Function()? signedIn,
+    TResult Function(FirebaseUser user)? signedIn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -131,7 +133,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(AuthFailure failure) error,
-    required TResult Function() signedIn,
+    required TResult Function(FirebaseUser user) signedIn,
   }) {
     return initial();
   }
@@ -142,7 +144,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
-    TResult Function()? signedIn,
+    TResult Function(FirebaseUser user)? signedIn,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -222,7 +224,7 @@ class _$_Loading implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(AuthFailure failure) error,
-    required TResult Function() signedIn,
+    required TResult Function(FirebaseUser user) signedIn,
   }) {
     return loading();
   }
@@ -233,7 +235,7 @@ class _$_Loading implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
-    TResult Function()? signedIn,
+    TResult Function(FirebaseUser user)? signedIn,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -347,7 +349,7 @@ class _$_Error implements _Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(AuthFailure failure) error,
-    required TResult Function() signedIn,
+    required TResult Function(FirebaseUser user) signedIn,
   }) {
     return error(failure);
   }
@@ -358,7 +360,7 @@ class _$_Error implements _Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
-    TResult Function()? signedIn,
+    TResult Function(FirebaseUser user)? signedIn,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -406,6 +408,7 @@ abstract class _Error implements AuthState {
 abstract class _$SignedInCopyWith<$Res> {
   factory _$SignedInCopyWith(_SignedIn value, $Res Function(_SignedIn) then) =
       __$SignedInCopyWithImpl<$Res>;
+  $Res call({FirebaseUser user});
 }
 
 /// @nodoc
@@ -416,25 +419,49 @@ class __$SignedInCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 
   @override
   _SignedIn get _value => super._value as _SignedIn;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(_SignedIn(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as FirebaseUser,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_SignedIn implements _SignedIn {
-  const _$_SignedIn();
+  const _$_SignedIn(this.user);
+
+  @override
+  final FirebaseUser user;
 
   @override
   String toString() {
-    return 'AuthState.signedIn()';
+    return 'AuthState.signedIn(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SignedIn);
+    return identical(this, other) ||
+        (other is _SignedIn &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SignedInCopyWith<_SignedIn> get copyWith =>
+      __$SignedInCopyWithImpl<_SignedIn>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -442,9 +469,9 @@ class _$_SignedIn implements _SignedIn {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(AuthFailure failure) error,
-    required TResult Function() signedIn,
+    required TResult Function(FirebaseUser user) signedIn,
   }) {
-    return signedIn();
+    return signedIn(user);
   }
 
   @override
@@ -453,11 +480,11 @@ class _$_SignedIn implements _SignedIn {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
-    TResult Function()? signedIn,
+    TResult Function(FirebaseUser user)? signedIn,
     required TResult orElse(),
   }) {
     if (signedIn != null) {
-      return signedIn();
+      return signedIn(user);
     }
     return orElse();
   }
@@ -490,5 +517,10 @@ class _$_SignedIn implements _SignedIn {
 }
 
 abstract class _SignedIn implements AuthState {
-  const factory _SignedIn() = _$_SignedIn;
+  const factory _SignedIn(FirebaseUser user) = _$_SignedIn;
+
+  FirebaseUser get user => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SignedInCopyWith<_SignedIn> get copyWith =>
+      throw _privateConstructorUsedError;
 }
