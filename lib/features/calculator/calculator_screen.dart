@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,6 +9,7 @@ import 'widgets/calculator_input.dart';
 const _result = 'Result:';
 const _errorMsg = 'Invalid input';
 
+@RoutePage()
 class CalculatorScreen extends StatelessWidget {
   const CalculatorScreen({Key? key}) : super(key: key);
 
@@ -31,7 +33,7 @@ extension _Widgets on CalculatorScreen {
                 const CalculatorInput(),
                 Text(
                   _result,
-                  style: Theme.of(context).textTheme.headline2!,
+                  style: Theme.of(context).textTheme.displayMedium!,
                 ),
                 _resultText(context, state),
               ],
@@ -48,7 +50,7 @@ extension _Widgets on CalculatorScreen {
           textAlign: TextAlign.center,
           style: Theme.of(context)
               .textTheme
-              .headline2!
+              .displayMedium!
               .copyWith(color: Colors.green),
         ),
         error: () => Text(
@@ -56,7 +58,7 @@ extension _Widgets on CalculatorScreen {
           textAlign: TextAlign.center,
           style: Theme.of(context)
               .textTheme
-              .headline2!
+              .displayMedium!
               .copyWith(color: Colors.red),
         ),
         orElse: () => Container(),

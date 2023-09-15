@@ -58,21 +58,21 @@ class MapsRepo implements IMapsRepo {
   @override
   Future<Either<MapsFailure, LatLng>> getUserLocation() async {
     try {
-      bool _serviceEnabled;
-      PermissionStatus _permissionGranted;
+      bool isServiceEnabled;
+      PermissionStatus arePermissionsGranted;
 
-      _serviceEnabled = await _location.serviceEnabled();
-      if (!_serviceEnabled) {
-        _serviceEnabled = await _location.requestService();
-        if (!_serviceEnabled) {
+      isServiceEnabled = await _location.serviceEnabled();
+      if (!isServiceEnabled) {
+        isServiceEnabled = await _location.requestService();
+        if (!isServiceEnabled) {
           return left(const MapsFailure.noPermission());
         }
       }
 
-      _permissionGranted = await _location.hasPermission();
-      if (_permissionGranted == PermissionStatus.denied) {
-        _permissionGranted = await _location.requestPermission();
-        if (_permissionGranted != PermissionStatus.granted) {
+      arePermissionsGranted = await _location.hasPermission();
+      if (arePermissionsGranted == PermissionStatus.denied) {
+        arePermissionsGranted = await _location.requestPermission();
+        if (arePermissionsGranted != PermissionStatus.granted) {
           return left(const MapsFailure.noPermission());
         }
       }

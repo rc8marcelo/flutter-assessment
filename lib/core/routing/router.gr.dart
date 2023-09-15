@@ -1,160 +1,234 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
 
-import 'package:auto_route/auto_route.dart' as _i1;
-import 'package:flutter/material.dart' as _i2;
+// ignore_for_file: type=lint
+// coverage:ignore-file
 
-import '../../features/auth/sign_in_screen.dart' as _i4;
-import '../../features/calculator/calculator_screen.dart' as _i7;
-import '../../features/home/home_screen.dart' as _i5;
-import '../../features/map/map_screen.dart' as _i6;
-import '../../features/news/models/news_article.dart' as _i10;
-import '../../features/news/news_details_screen.dart' as _i9;
-import '../../features/news/newsfeed_screen.dart' as _i8;
-import '../../features/splash/splash_screen.dart' as _i3;
+part of 'router.dart';
 
-class Router extends _i1.RootStackRouter {
-  Router([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey])
-      : super(navigatorKey);
+abstract class _$AppRouter extends RootStackRouter {
+  // ignore: unused_element
+  _$AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i1.PageFactory> pagesMap = {
-    SplashRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+  final Map<String, PageFactory> pagesMap = {
+    CalculatorRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        builder: (_) {
-          return const _i3.SplashScreen();
-        }),
-    SignInRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        child: const CalculatorScreen(),
+      );
+    },
+    HomeRoute.name: (routeData) {
+      final args = routeData.argsAs<HomeRouteArgs>();
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        builder: (_) {
-          return const _i4.SignInScreen();
-        }),
-    HomeRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        child: HomeScreen(
+          displayName: args.displayName,
+          key: args.key,
+        ),
+      );
+    },
+    MapRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        builder: (data) {
-          final args = data.argsAs<HomeRouteArgs>();
-          return _i5.HomeScreen(displayName: args.displayName, key: args.key);
-        }),
-    MapRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        child: const MapScreen(),
+      );
+    },
+    NewsDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<NewsDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        builder: (_) {
-          return const _i6.MapScreen();
-        }),
-    NewsRouter.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        child: NewsDetailsScreen(
+          article: args.article,
+          key: args.key,
+        ),
+      );
+    },
+    NewsFeedRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        builder: (_) {
-          return const _i1.EmptyRouterPage();
-        }),
-    CalculatorRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        child: const NewsFeedScreen(),
+      );
+    },
+    NewsRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        builder: (_) {
-          return const _i7.CalculatorScreen();
-        }),
-    NewsFeedRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        child: const NewsRouterPage(),
+      );
+    },
+    SignInRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        builder: (_) {
-          return const _i8.NewsFeedScreen();
-        }),
-    NewsDetailsRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        child: const SignInScreen(),
+      );
+    },
+    SplashRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        builder: (data) {
-          final args = data.argsAs<NewsDetailsRouteArgs>();
-          return _i9.NewsDetailsScreen(article: args.article, key: args.key);
-        })
+        child: const SplashScreen(),
+      );
+    },
   };
-
-  @override
-  List<_i1.RouteConfig> get routes => [
-        _i1.RouteConfig(SplashRoute.name, path: '/'),
-        _i1.RouteConfig(SignInRoute.name, path: '/sign-in-screen'),
-        _i1.RouteConfig(HomeRoute.name, path: '/home-screen', children: [
-          _i1.RouteConfig(MapRoute.name, path: 'map-screen'),
-          _i1.RouteConfig(NewsRouter.name,
-              path: 'empty-router-page',
-              children: [
-                _i1.RouteConfig(NewsFeedRoute.name, path: ''),
-                _i1.RouteConfig(NewsDetailsRoute.name,
-                    path: 'news-details-screen')
-              ]),
-          _i1.RouteConfig(CalculatorRoute.name, path: 'calculator-screen')
-        ])
-      ];
 }
 
-class SplashRoute extends _i1.PageRouteInfo {
-  const SplashRoute() : super(name, path: '/');
+/// generated route for
+/// [CalculatorScreen]
+class CalculatorRoute extends PageRouteInfo<void> {
+  const CalculatorRoute({List<PageRouteInfo>? children})
+      : super(
+          CalculatorRoute.name,
+          initialChildren: children,
+        );
 
-  static const String name = 'SplashRoute';
+  static const String name = 'CalculatorRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
-class SignInRoute extends _i1.PageRouteInfo {
-  const SignInRoute() : super(name, path: '/sign-in-screen');
-
-  static const String name = 'SignInRoute';
-}
-
-class HomeRoute extends _i1.PageRouteInfo<HomeRouteArgs> {
-  HomeRoute(
-      {required String displayName,
-      _i2.Key? key,
-      List<_i1.PageRouteInfo>? children})
-      : super(name,
-            path: '/home-screen',
-            args: HomeRouteArgs(displayName: displayName, key: key),
-            initialChildren: children);
+/// generated route for
+/// [HomeScreen]
+class HomeRoute extends PageRouteInfo<HomeRouteArgs> {
+  HomeRoute({
+    required String displayName,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          HomeRoute.name,
+          args: HomeRouteArgs(
+            displayName: displayName,
+            key: key,
+          ),
+          initialChildren: children,
+        );
 
   static const String name = 'HomeRoute';
+
+  static const PageInfo<HomeRouteArgs> page = PageInfo<HomeRouteArgs>(name);
 }
 
 class HomeRouteArgs {
-  const HomeRouteArgs({required this.displayName, this.key});
+  const HomeRouteArgs({
+    required this.displayName,
+    this.key,
+  });
 
   final String displayName;
 
-  final _i2.Key? key;
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'HomeRouteArgs{displayName: $displayName, key: $key}';
+  }
 }
 
-class MapRoute extends _i1.PageRouteInfo {
-  const MapRoute() : super(name, path: 'map-screen');
+/// generated route for
+/// [MapScreen]
+class MapRoute extends PageRouteInfo<void> {
+  const MapRoute({List<PageRouteInfo>? children})
+      : super(
+          MapRoute.name,
+          initialChildren: children,
+        );
 
   static const String name = 'MapRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
-class NewsRouter extends _i1.PageRouteInfo {
-  const NewsRouter({List<_i1.PageRouteInfo>? children})
-      : super(name, path: 'empty-router-page', initialChildren: children);
-
-  static const String name = 'NewsRouter';
-}
-
-class CalculatorRoute extends _i1.PageRouteInfo {
-  const CalculatorRoute() : super(name, path: 'calculator-screen');
-
-  static const String name = 'CalculatorRoute';
-}
-
-class NewsFeedRoute extends _i1.PageRouteInfo {
-  const NewsFeedRoute() : super(name, path: '');
-
-  static const String name = 'NewsFeedRoute';
-}
-
-class NewsDetailsRoute extends _i1.PageRouteInfo<NewsDetailsRouteArgs> {
-  NewsDetailsRoute({required _i10.NewsArticle article, _i2.Key? key})
-      : super(name,
-            path: 'news-details-screen',
-            args: NewsDetailsRouteArgs(article: article, key: key));
+/// generated route for
+/// [NewsDetailsScreen]
+class NewsDetailsRoute extends PageRouteInfo<NewsDetailsRouteArgs> {
+  NewsDetailsRoute({
+    required NewsArticle article,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          NewsDetailsRoute.name,
+          args: NewsDetailsRouteArgs(
+            article: article,
+            key: key,
+          ),
+          initialChildren: children,
+        );
 
   static const String name = 'NewsDetailsRoute';
+
+  static const PageInfo<NewsDetailsRouteArgs> page =
+      PageInfo<NewsDetailsRouteArgs>(name);
 }
 
 class NewsDetailsRouteArgs {
-  const NewsDetailsRouteArgs({required this.article, this.key});
+  const NewsDetailsRouteArgs({
+    required this.article,
+    this.key,
+  });
 
-  final _i10.NewsArticle article;
+  final NewsArticle article;
 
-  final _i2.Key? key;
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'NewsDetailsRouteArgs{article: $article, key: $key}';
+  }
+}
+
+/// generated route for
+/// [NewsFeedScreen]
+class NewsFeedRoute extends PageRouteInfo<void> {
+  const NewsFeedRoute({List<PageRouteInfo>? children})
+      : super(
+          NewsFeedRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'NewsFeedRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [NewsRouterPage]
+class NewsRouter extends PageRouteInfo<void> {
+  const NewsRouter({List<PageRouteInfo>? children})
+      : super(
+          NewsRouter.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'NewsRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SignInScreen]
+class SignInRoute extends PageRouteInfo<void> {
+  const SignInRoute({List<PageRouteInfo>? children})
+      : super(
+          SignInRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SignInRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SplashScreen]
+class SplashRoute extends PageRouteInfo<void> {
+  const SplashRoute({List<PageRouteInfo>? children})
+      : super(
+          SplashRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SplashRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }

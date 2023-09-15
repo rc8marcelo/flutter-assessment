@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'news_cubit.dart';
 
@@ -10,30 +12,7 @@ part of 'news_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$NewsStateTearOff {
-  const _$NewsStateTearOff();
-
-  _NewsState call(
-      {required KtList<NewsArticle> articles,
-      required Option<NewsFailure> failure,
-      required int totalArticles,
-      required int currentPage,
-      required bool isLoading}) {
-    return _NewsState(
-      articles: articles,
-      failure: failure,
-      totalArticles: totalArticles,
-      currentPage: currentPage,
-      isLoading: isLoading,
-    );
-  }
-}
-
-/// @nodoc
-const $NewsState = _$NewsStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$NewsState {
@@ -51,7 +30,8 @@ mixin _$NewsState {
 /// @nodoc
 abstract class $NewsStateCopyWith<$Res> {
   factory $NewsStateCopyWith(NewsState value, $Res Function(NewsState) then) =
-      _$NewsStateCopyWithImpl<$Res>;
+      _$NewsStateCopyWithImpl<$Res, NewsState>;
+  @useResult
   $Res call(
       {KtList<NewsArticle> articles,
       Option<NewsFailure> failure,
@@ -61,52 +41,56 @@ abstract class $NewsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NewsStateCopyWithImpl<$Res> implements $NewsStateCopyWith<$Res> {
+class _$NewsStateCopyWithImpl<$Res, $Val extends NewsState>
+    implements $NewsStateCopyWith<$Res> {
   _$NewsStateCopyWithImpl(this._value, this._then);
 
-  final NewsState _value;
   // ignore: unused_field
-  final $Res Function(NewsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? articles = freezed,
-    Object? failure = freezed,
-    Object? totalArticles = freezed,
-    Object? currentPage = freezed,
-    Object? isLoading = freezed,
+    Object? articles = null,
+    Object? failure = null,
+    Object? totalArticles = null,
+    Object? currentPage = null,
+    Object? isLoading = null,
   }) {
     return _then(_value.copyWith(
-      articles: articles == freezed
+      articles: null == articles
           ? _value.articles
           : articles // ignore: cast_nullable_to_non_nullable
               as KtList<NewsArticle>,
-      failure: failure == freezed
+      failure: null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as Option<NewsFailure>,
-      totalArticles: totalArticles == freezed
+      totalArticles: null == totalArticles
           ? _value.totalArticles
           : totalArticles // ignore: cast_nullable_to_non_nullable
               as int,
-      currentPage: currentPage == freezed
+      currentPage: null == currentPage
           ? _value.currentPage
           : currentPage // ignore: cast_nullable_to_non_nullable
               as int,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$NewsStateCopyWith<$Res> implements $NewsStateCopyWith<$Res> {
-  factory _$NewsStateCopyWith(
-          _NewsState value, $Res Function(_NewsState) then) =
-      __$NewsStateCopyWithImpl<$Res>;
+abstract class _$$_NewsStateCopyWith<$Res> implements $NewsStateCopyWith<$Res> {
+  factory _$$_NewsStateCopyWith(
+          _$_NewsState value, $Res Function(_$_NewsState) then) =
+      __$$_NewsStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {KtList<NewsArticle> articles,
       Option<NewsFailure> failure,
@@ -116,40 +100,40 @@ abstract class _$NewsStateCopyWith<$Res> implements $NewsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$NewsStateCopyWithImpl<$Res> extends _$NewsStateCopyWithImpl<$Res>
-    implements _$NewsStateCopyWith<$Res> {
-  __$NewsStateCopyWithImpl(_NewsState _value, $Res Function(_NewsState) _then)
-      : super(_value, (v) => _then(v as _NewsState));
+class __$$_NewsStateCopyWithImpl<$Res>
+    extends _$NewsStateCopyWithImpl<$Res, _$_NewsState>
+    implements _$$_NewsStateCopyWith<$Res> {
+  __$$_NewsStateCopyWithImpl(
+      _$_NewsState _value, $Res Function(_$_NewsState) _then)
+      : super(_value, _then);
 
-  @override
-  _NewsState get _value => super._value as _NewsState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? articles = freezed,
-    Object? failure = freezed,
-    Object? totalArticles = freezed,
-    Object? currentPage = freezed,
-    Object? isLoading = freezed,
+    Object? articles = null,
+    Object? failure = null,
+    Object? totalArticles = null,
+    Object? currentPage = null,
+    Object? isLoading = null,
   }) {
-    return _then(_NewsState(
-      articles: articles == freezed
+    return _then(_$_NewsState(
+      articles: null == articles
           ? _value.articles
           : articles // ignore: cast_nullable_to_non_nullable
               as KtList<NewsArticle>,
-      failure: failure == freezed
+      failure: null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as Option<NewsFailure>,
-      totalArticles: totalArticles == freezed
+      totalArticles: null == totalArticles
           ? _value.totalArticles
           : totalArticles // ignore: cast_nullable_to_non_nullable
               as int,
-      currentPage: currentPage == freezed
+      currentPage: null == currentPage
           ? _value.currentPage
           : currentPage // ignore: cast_nullable_to_non_nullable
               as int,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -186,59 +170,50 @@ class _$_NewsState implements _NewsState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NewsState &&
+        (other.runtimeType == runtimeType &&
+            other is _$_NewsState &&
             (identical(other.articles, articles) ||
-                const DeepCollectionEquality()
-                    .equals(other.articles, articles)) &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality()
-                    .equals(other.failure, failure)) &&
+                other.articles == articles) &&
+            (identical(other.failure, failure) || other.failure == failure) &&
             (identical(other.totalArticles, totalArticles) ||
-                const DeepCollectionEquality()
-                    .equals(other.totalArticles, totalArticles)) &&
+                other.totalArticles == totalArticles) &&
             (identical(other.currentPage, currentPage) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentPage, currentPage)) &&
+                other.currentPage == currentPage) &&
             (identical(other.isLoading, isLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLoading, isLoading)));
+                other.isLoading == isLoading));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(articles) ^
-      const DeepCollectionEquality().hash(failure) ^
-      const DeepCollectionEquality().hash(totalArticles) ^
-      const DeepCollectionEquality().hash(currentPage) ^
-      const DeepCollectionEquality().hash(isLoading);
+  int get hashCode => Object.hash(
+      runtimeType, articles, failure, totalArticles, currentPage, isLoading);
 
   @JsonKey(ignore: true)
   @override
-  _$NewsStateCopyWith<_NewsState> get copyWith =>
-      __$NewsStateCopyWithImpl<_NewsState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_NewsStateCopyWith<_$_NewsState> get copyWith =>
+      __$$_NewsStateCopyWithImpl<_$_NewsState>(this, _$identity);
 }
 
 abstract class _NewsState implements NewsState {
   const factory _NewsState(
-      {required KtList<NewsArticle> articles,
-      required Option<NewsFailure> failure,
-      required int totalArticles,
-      required int currentPage,
-      required bool isLoading}) = _$_NewsState;
+      {required final KtList<NewsArticle> articles,
+      required final Option<NewsFailure> failure,
+      required final int totalArticles,
+      required final int currentPage,
+      required final bool isLoading}) = _$_NewsState;
 
   @override
-  KtList<NewsArticle> get articles => throw _privateConstructorUsedError;
+  KtList<NewsArticle> get articles;
   @override
-  Option<NewsFailure> get failure => throw _privateConstructorUsedError;
+  Option<NewsFailure> get failure;
   @override
-  int get totalArticles => throw _privateConstructorUsedError;
+  int get totalArticles;
   @override
-  int get currentPage => throw _privateConstructorUsedError;
+  int get currentPage;
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @override
   @JsonKey(ignore: true)
-  _$NewsStateCopyWith<_NewsState> get copyWith =>
+  _$$_NewsStateCopyWith<_$_NewsState> get copyWith =>
       throw _privateConstructorUsedError;
 }

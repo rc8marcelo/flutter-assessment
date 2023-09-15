@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'news_response.dart';
 
@@ -10,36 +12,11 @@ part of 'news_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 NewsApiResponse _$NewsApiResponseFromJson(Map<String, dynamic> json) {
   return _NewsApiResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$NewsApiResponseTearOff {
-  const _$NewsApiResponseTearOff();
-
-  _NewsApiResponse call(
-      {required int totalResults,
-      required String status,
-      required List<NewsArticle> articles,
-      String? message}) {
-    return _NewsApiResponse(
-      totalResults: totalResults,
-      status: status,
-      articles: articles,
-      message: message,
-    );
-  }
-
-  NewsApiResponse fromJson(Map<String, Object> json) {
-    return NewsApiResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $NewsApiResponse = _$NewsApiResponseTearOff();
 
 /// @nodoc
 mixin _$NewsApiResponse {
@@ -58,7 +35,8 @@ mixin _$NewsApiResponse {
 abstract class $NewsApiResponseCopyWith<$Res> {
   factory $NewsApiResponseCopyWith(
           NewsApiResponse value, $Res Function(NewsApiResponse) then) =
-      _$NewsApiResponseCopyWithImpl<$Res>;
+      _$NewsApiResponseCopyWithImpl<$Res, NewsApiResponse>;
+  @useResult
   $Res call(
       {int totalResults,
       String status,
@@ -67,49 +45,52 @@ abstract class $NewsApiResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NewsApiResponseCopyWithImpl<$Res>
+class _$NewsApiResponseCopyWithImpl<$Res, $Val extends NewsApiResponse>
     implements $NewsApiResponseCopyWith<$Res> {
   _$NewsApiResponseCopyWithImpl(this._value, this._then);
 
-  final NewsApiResponse _value;
   // ignore: unused_field
-  final $Res Function(NewsApiResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? totalResults = freezed,
-    Object? status = freezed,
-    Object? articles = freezed,
+    Object? totalResults = null,
+    Object? status = null,
+    Object? articles = null,
     Object? message = freezed,
   }) {
     return _then(_value.copyWith(
-      totalResults: totalResults == freezed
+      totalResults: null == totalResults
           ? _value.totalResults
           : totalResults // ignore: cast_nullable_to_non_nullable
               as int,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      articles: articles == freezed
+      articles: null == articles
           ? _value.articles
           : articles // ignore: cast_nullable_to_non_nullable
               as List<NewsArticle>,
-      message: message == freezed
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$NewsApiResponseCopyWith<$Res>
+abstract class _$$_NewsApiResponseCopyWith<$Res>
     implements $NewsApiResponseCopyWith<$Res> {
-  factory _$NewsApiResponseCopyWith(
-          _NewsApiResponse value, $Res Function(_NewsApiResponse) then) =
-      __$NewsApiResponseCopyWithImpl<$Res>;
+  factory _$$_NewsApiResponseCopyWith(
+          _$_NewsApiResponse value, $Res Function(_$_NewsApiResponse) then) =
+      __$$_NewsApiResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int totalResults,
       String status,
@@ -118,37 +99,35 @@ abstract class _$NewsApiResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$NewsApiResponseCopyWithImpl<$Res>
-    extends _$NewsApiResponseCopyWithImpl<$Res>
-    implements _$NewsApiResponseCopyWith<$Res> {
-  __$NewsApiResponseCopyWithImpl(
-      _NewsApiResponse _value, $Res Function(_NewsApiResponse) _then)
-      : super(_value, (v) => _then(v as _NewsApiResponse));
+class __$$_NewsApiResponseCopyWithImpl<$Res>
+    extends _$NewsApiResponseCopyWithImpl<$Res, _$_NewsApiResponse>
+    implements _$$_NewsApiResponseCopyWith<$Res> {
+  __$$_NewsApiResponseCopyWithImpl(
+      _$_NewsApiResponse _value, $Res Function(_$_NewsApiResponse) _then)
+      : super(_value, _then);
 
-  @override
-  _NewsApiResponse get _value => super._value as _NewsApiResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? totalResults = freezed,
-    Object? status = freezed,
-    Object? articles = freezed,
+    Object? totalResults = null,
+    Object? status = null,
+    Object? articles = null,
     Object? message = freezed,
   }) {
-    return _then(_NewsApiResponse(
-      totalResults: totalResults == freezed
+    return _then(_$_NewsApiResponse(
+      totalResults: null == totalResults
           ? _value.totalResults
           : totalResults // ignore: cast_nullable_to_non_nullable
               as int,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      articles: articles == freezed
-          ? _value.articles
+      articles: null == articles
+          ? _value._articles
           : articles // ignore: cast_nullable_to_non_nullable
               as List<NewsArticle>,
-      message: message == freezed
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -162,19 +141,26 @@ class _$_NewsApiResponse extends _NewsApiResponse {
   const _$_NewsApiResponse(
       {required this.totalResults,
       required this.status,
-      required this.articles,
+      required final List<NewsArticle> articles,
       this.message})
-      : super._();
+      : _articles = articles,
+        super._();
 
   factory _$_NewsApiResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$_NewsApiResponseFromJson(json);
+      _$$_NewsApiResponseFromJson(json);
 
   @override
   final int totalResults;
   @override
   final String status;
+  final List<NewsArticle> _articles;
   @override
-  final List<NewsArticle> articles;
+  List<NewsArticle> get articles {
+    if (_articles is EqualUnmodifiableListView) return _articles;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_articles);
+  }
+
   @override
   final String? message;
 
@@ -186,59 +172,55 @@ class _$_NewsApiResponse extends _NewsApiResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NewsApiResponse &&
+        (other.runtimeType == runtimeType &&
+            other is _$_NewsApiResponse &&
             (identical(other.totalResults, totalResults) ||
-                const DeepCollectionEquality()
-                    .equals(other.totalResults, totalResults)) &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.articles, articles) ||
-                const DeepCollectionEquality()
-                    .equals(other.articles, articles)) &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+                other.totalResults == totalResults) &&
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality().equals(other._articles, _articles) &&
+            (identical(other.message, message) || other.message == message));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(totalResults) ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(articles) ^
-      const DeepCollectionEquality().hash(message);
 
   @JsonKey(ignore: true)
   @override
-  _$NewsApiResponseCopyWith<_NewsApiResponse> get copyWith =>
-      __$NewsApiResponseCopyWithImpl<_NewsApiResponse>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, totalResults, status,
+      const DeepCollectionEquality().hash(_articles), message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_NewsApiResponseCopyWith<_$_NewsApiResponse> get copyWith =>
+      __$$_NewsApiResponseCopyWithImpl<_$_NewsApiResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_NewsApiResponseToJson(this);
+    return _$$_NewsApiResponseToJson(
+      this,
+    );
   }
 }
 
 abstract class _NewsApiResponse extends NewsApiResponse {
   const factory _NewsApiResponse(
-      {required int totalResults,
-      required String status,
-      required List<NewsArticle> articles,
-      String? message}) = _$_NewsApiResponse;
+      {required final int totalResults,
+      required final String status,
+      required final List<NewsArticle> articles,
+      final String? message}) = _$_NewsApiResponse;
   const _NewsApiResponse._() : super._();
 
   factory _NewsApiResponse.fromJson(Map<String, dynamic> json) =
       _$_NewsApiResponse.fromJson;
 
   @override
-  int get totalResults => throw _privateConstructorUsedError;
+  int get totalResults;
   @override
-  String get status => throw _privateConstructorUsedError;
+  String get status;
   @override
-  List<NewsArticle> get articles => throw _privateConstructorUsedError;
+  List<NewsArticle> get articles;
   @override
-  String? get message => throw _privateConstructorUsedError;
+  String? get message;
   @override
   @JsonKey(ignore: true)
-  _$NewsApiResponseCopyWith<_NewsApiResponse> get copyWith =>
+  _$$_NewsApiResponseCopyWith<_$_NewsApiResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }

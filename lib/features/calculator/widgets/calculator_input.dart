@@ -8,10 +8,10 @@ class CalculatorInput extends StatefulWidget {
   const CalculatorInput({Key? key}) : super(key: key);
 
   @override
-  _CalculatorInputState createState() => _CalculatorInputState();
+  CalculatorInputState createState() => CalculatorInputState();
 }
 
-class _CalculatorInputState extends State<CalculatorInput> {
+class CalculatorInputState extends State<CalculatorInput> {
   final TextEditingController _controller = TextEditingController();
 
   @override

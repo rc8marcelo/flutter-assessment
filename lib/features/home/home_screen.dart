@@ -1,12 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../core/routing/router.gr.dart';
+import 'package:flutter_assessment/core/routing/router.dart';
 
 const _mapTab = 'Map';
 const _titleText = 'Hi, ';
 const _newsTab = 'Newsfeed';
 const _calcTab = 'Calculator';
 
+@RoutePage()
 class HomeScreen extends StatelessWidget {
   final String displayName;
   const HomeScreen({required this.displayName, Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: const Color(0xFFF4F4F4),
       appBarBuilder: (context, _) {
         return AppBar(
-          leading: const AutoBackButton(),
+          leading: const AutoLeadingButton(),
           title: Text('$_titleText $displayName'),
         );
       },

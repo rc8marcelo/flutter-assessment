@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'maps_failure.dart';
 
@@ -10,29 +12,7 @@ part of 'maps_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$MapsFailureTearOff {
-  const _$MapsFailureTearOff();
-
-  NoRoute noRoute() {
-    return const NoRoute();
-  }
-
-  NoPermission noPermission() {
-    return const NoPermission();
-  }
-
-  Unknown unknown({String message = ''}) {
-    return Unknown(
-      message: message,
-    );
-  }
-}
-
-/// @nodoc
-const $MapsFailure = _$MapsFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$MapsFailure {
@@ -41,6 +21,13 @@ mixin _$MapsFailure {
     required TResult Function() noRoute,
     required TResult Function() noPermission,
     required TResult Function(String message) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? noRoute,
+    TResult? Function()? noPermission,
+    TResult? Function(String message)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +46,13 @@ mixin _$MapsFailure {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoRoute value)? noRoute,
+    TResult? Function(NoPermission value)? noPermission,
+    TResult? Function(Unknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NoRoute value)? noRoute,
     TResult Function(NoPermission value)? noPermission,
@@ -72,32 +66,32 @@ mixin _$MapsFailure {
 abstract class $MapsFailureCopyWith<$Res> {
   factory $MapsFailureCopyWith(
           MapsFailure value, $Res Function(MapsFailure) then) =
-      _$MapsFailureCopyWithImpl<$Res>;
+      _$MapsFailureCopyWithImpl<$Res, MapsFailure>;
 }
 
 /// @nodoc
-class _$MapsFailureCopyWithImpl<$Res> implements $MapsFailureCopyWith<$Res> {
+class _$MapsFailureCopyWithImpl<$Res, $Val extends MapsFailure>
+    implements $MapsFailureCopyWith<$Res> {
   _$MapsFailureCopyWithImpl(this._value, this._then);
 
-  final MapsFailure _value;
   // ignore: unused_field
-  final $Res Function(MapsFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $NoRouteCopyWith<$Res> {
-  factory $NoRouteCopyWith(NoRoute value, $Res Function(NoRoute) then) =
-      _$NoRouteCopyWithImpl<$Res>;
+abstract class _$$NoRouteCopyWith<$Res> {
+  factory _$$NoRouteCopyWith(_$NoRoute value, $Res Function(_$NoRoute) then) =
+      __$$NoRouteCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NoRouteCopyWithImpl<$Res> extends _$MapsFailureCopyWithImpl<$Res>
-    implements $NoRouteCopyWith<$Res> {
-  _$NoRouteCopyWithImpl(NoRoute _value, $Res Function(NoRoute) _then)
-      : super(_value, (v) => _then(v as NoRoute));
-
-  @override
-  NoRoute get _value => super._value as NoRoute;
+class __$$NoRouteCopyWithImpl<$Res>
+    extends _$MapsFailureCopyWithImpl<$Res, _$NoRoute>
+    implements _$$NoRouteCopyWith<$Res> {
+  __$$NoRouteCopyWithImpl(_$NoRoute _value, $Res Function(_$NoRoute) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -112,7 +106,8 @@ class _$NoRoute implements NoRoute {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is NoRoute);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NoRoute);
   }
 
   @override
@@ -126,6 +121,16 @@ class _$NoRoute implements NoRoute {
     required TResult Function(String message) unknown,
   }) {
     return noRoute();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? noRoute,
+    TResult? Function()? noPermission,
+    TResult? Function(String message)? unknown,
+  }) {
+    return noRoute?.call();
   }
 
   @override
@@ -154,6 +159,16 @@ class _$NoRoute implements NoRoute {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoRoute value)? noRoute,
+    TResult? Function(NoPermission value)? noPermission,
+    TResult? Function(Unknown value)? unknown,
+  }) {
+    return noRoute?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NoRoute value)? noRoute,
     TResult Function(NoPermission value)? noPermission,
@@ -172,21 +187,19 @@ abstract class NoRoute implements MapsFailure {
 }
 
 /// @nodoc
-abstract class $NoPermissionCopyWith<$Res> {
-  factory $NoPermissionCopyWith(
-          NoPermission value, $Res Function(NoPermission) then) =
-      _$NoPermissionCopyWithImpl<$Res>;
+abstract class _$$NoPermissionCopyWith<$Res> {
+  factory _$$NoPermissionCopyWith(
+          _$NoPermission value, $Res Function(_$NoPermission) then) =
+      __$$NoPermissionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NoPermissionCopyWithImpl<$Res> extends _$MapsFailureCopyWithImpl<$Res>
-    implements $NoPermissionCopyWith<$Res> {
-  _$NoPermissionCopyWithImpl(
-      NoPermission _value, $Res Function(NoPermission) _then)
-      : super(_value, (v) => _then(v as NoPermission));
-
-  @override
-  NoPermission get _value => super._value as NoPermission;
+class __$$NoPermissionCopyWithImpl<$Res>
+    extends _$MapsFailureCopyWithImpl<$Res, _$NoPermission>
+    implements _$$NoPermissionCopyWith<$Res> {
+  __$$NoPermissionCopyWithImpl(
+      _$NoPermission _value, $Res Function(_$NoPermission) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -201,7 +214,8 @@ class _$NoPermission implements NoPermission {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is NoPermission);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NoPermission);
   }
 
   @override
@@ -215,6 +229,16 @@ class _$NoPermission implements NoPermission {
     required TResult Function(String message) unknown,
   }) {
     return noPermission();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? noRoute,
+    TResult? Function()? noPermission,
+    TResult? Function(String message)? unknown,
+  }) {
+    return noPermission?.call();
   }
 
   @override
@@ -243,6 +267,16 @@ class _$NoPermission implements NoPermission {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoRoute value)? noRoute,
+    TResult? Function(NoPermission value)? noPermission,
+    TResult? Function(Unknown value)? unknown,
+  }) {
+    return noPermission?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NoRoute value)? noRoute,
     TResult Function(NoPermission value)? noPermission,
@@ -261,27 +295,27 @@ abstract class NoPermission implements MapsFailure {
 }
 
 /// @nodoc
-abstract class $UnknownCopyWith<$Res> {
-  factory $UnknownCopyWith(Unknown value, $Res Function(Unknown) then) =
-      _$UnknownCopyWithImpl<$Res>;
+abstract class _$$UnknownCopyWith<$Res> {
+  factory _$$UnknownCopyWith(_$Unknown value, $Res Function(_$Unknown) then) =
+      __$$UnknownCopyWithImpl<$Res>;
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class _$UnknownCopyWithImpl<$Res> extends _$MapsFailureCopyWithImpl<$Res>
-    implements $UnknownCopyWith<$Res> {
-  _$UnknownCopyWithImpl(Unknown _value, $Res Function(Unknown) _then)
-      : super(_value, (v) => _then(v as Unknown));
+class __$$UnknownCopyWithImpl<$Res>
+    extends _$MapsFailureCopyWithImpl<$Res, _$Unknown>
+    implements _$$UnknownCopyWith<$Res> {
+  __$$UnknownCopyWithImpl(_$Unknown _value, $Res Function(_$Unknown) _then)
+      : super(_value, _then);
 
-  @override
-  Unknown get _value => super._value as Unknown;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
-    return _then(Unknown(
-      message: message == freezed
+    return _then(_$Unknown(
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -294,8 +328,8 @@ class _$UnknownCopyWithImpl<$Res> extends _$MapsFailureCopyWithImpl<$Res>
 class _$Unknown implements Unknown {
   const _$Unknown({this.message = ''});
 
-  @JsonKey(defaultValue: '')
   @override
+  @JsonKey()
   final String message;
 
   @override
@@ -306,19 +340,19 @@ class _$Unknown implements Unknown {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Unknown &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+        (other.runtimeType == runtimeType &&
+            other is _$Unknown &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
-  $UnknownCopyWith<Unknown> get copyWith =>
-      _$UnknownCopyWithImpl<Unknown>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UnknownCopyWith<_$Unknown> get copyWith =>
+      __$$UnknownCopyWithImpl<_$Unknown>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -328,6 +362,16 @@ class _$Unknown implements Unknown {
     required TResult Function(String message) unknown,
   }) {
     return unknown(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? noRoute,
+    TResult? Function()? noPermission,
+    TResult? Function(String message)? unknown,
+  }) {
+    return unknown?.call(message);
   }
 
   @override
@@ -356,6 +400,16 @@ class _$Unknown implements Unknown {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NoRoute value)? noRoute,
+    TResult? Function(NoPermission value)? noPermission,
+    TResult? Function(Unknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NoRoute value)? noRoute,
     TResult Function(NoPermission value)? noPermission,
@@ -370,9 +424,10 @@ class _$Unknown implements Unknown {
 }
 
 abstract class Unknown implements MapsFailure {
-  const factory Unknown({String message}) = _$Unknown;
+  const factory Unknown({final String message}) = _$Unknown;
 
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @JsonKey(ignore: true)
-  $UnknownCopyWith<Unknown> get copyWith => throw _privateConstructorUsedError;
+  _$$UnknownCopyWith<_$Unknown> get copyWith =>
+      throw _privateConstructorUsedError;
 }

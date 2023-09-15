@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_assessment/features/map/models/directions.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,6 +13,7 @@ const _btnRandomLoc = 'Get Random Location';
 const _btnDirections = 'Toggle directions';
 const _polylineId = 'directions';
 
+@RoutePage()
 class MapScreen extends StatefulWidget {
   const MapScreen({Key? key}) : super(key: key);
 
@@ -35,8 +37,8 @@ class _MapScreenState extends State<MapScreen> {
     super.dispose();
   }
 
-  void _onMapCreated(GoogleMapController _cntlr) {
-    _controller = _cntlr;
+  void _onMapCreated(GoogleMapController controller) {
+    _controller = controller;
   }
 
   @override

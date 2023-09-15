@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'calculator_cubit.dart';
 
@@ -10,29 +12,7 @@ part of 'calculator_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CalculatorStateTearOff {
-  const _$CalculatorStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _Calculated calculated(String result) {
-    return _Calculated(
-      result,
-    );
-  }
-
-  _Error error() {
-    return const _Error();
-  }
-}
-
-/// @nodoc
-const $CalculatorState = _$CalculatorStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CalculatorState {
@@ -41,6 +21,13 @@ mixin _$CalculatorState {
     required TResult Function() initial,
     required TResult Function(String result) calculated,
     required TResult Function() error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String result)? calculated,
+    TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +46,13 @@ mixin _$CalculatorState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Calculated value)? calculated,
+    TResult? Function(_Error value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Calculated value)? calculated,
@@ -72,33 +66,33 @@ mixin _$CalculatorState {
 abstract class $CalculatorStateCopyWith<$Res> {
   factory $CalculatorStateCopyWith(
           CalculatorState value, $Res Function(CalculatorState) then) =
-      _$CalculatorStateCopyWithImpl<$Res>;
+      _$CalculatorStateCopyWithImpl<$Res, CalculatorState>;
 }
 
 /// @nodoc
-class _$CalculatorStateCopyWithImpl<$Res>
+class _$CalculatorStateCopyWithImpl<$Res, $Val extends CalculatorState>
     implements $CalculatorStateCopyWith<$Res> {
   _$CalculatorStateCopyWithImpl(this._value, this._then);
 
-  final CalculatorState _value;
   // ignore: unused_field
-  final $Res Function(CalculatorState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$CalculatorStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$CalculatorStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -113,7 +107,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -127,6 +122,16 @@ class _$_Initial implements _Initial {
     required TResult Function() error,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String result)? calculated,
+    TResult? Function()? error,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -155,6 +160,16 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Calculated value)? calculated,
+    TResult? Function(_Error value)? error,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Calculated value)? calculated,
@@ -173,30 +188,29 @@ abstract class _Initial implements CalculatorState {
 }
 
 /// @nodoc
-abstract class _$CalculatedCopyWith<$Res> {
-  factory _$CalculatedCopyWith(
-          _Calculated value, $Res Function(_Calculated) then) =
-      __$CalculatedCopyWithImpl<$Res>;
+abstract class _$$_CalculatedCopyWith<$Res> {
+  factory _$$_CalculatedCopyWith(
+          _$_Calculated value, $Res Function(_$_Calculated) then) =
+      __$$_CalculatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String result});
 }
 
 /// @nodoc
-class __$CalculatedCopyWithImpl<$Res>
-    extends _$CalculatorStateCopyWithImpl<$Res>
-    implements _$CalculatedCopyWith<$Res> {
-  __$CalculatedCopyWithImpl(
-      _Calculated _value, $Res Function(_Calculated) _then)
-      : super(_value, (v) => _then(v as _Calculated));
+class __$$_CalculatedCopyWithImpl<$Res>
+    extends _$CalculatorStateCopyWithImpl<$Res, _$_Calculated>
+    implements _$$_CalculatedCopyWith<$Res> {
+  __$$_CalculatedCopyWithImpl(
+      _$_Calculated _value, $Res Function(_$_Calculated) _then)
+      : super(_value, _then);
 
-  @override
-  _Calculated get _value => super._value as _Calculated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? result = freezed,
+    Object? result = null,
   }) {
-    return _then(_Calculated(
-      result == freezed
+    return _then(_$_Calculated(
+      null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as String,
@@ -220,19 +234,19 @@ class _$_Calculated implements _Calculated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Calculated &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Calculated &&
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
+  int get hashCode => Object.hash(runtimeType, result);
 
   @JsonKey(ignore: true)
   @override
-  _$CalculatedCopyWith<_Calculated> get copyWith =>
-      __$CalculatedCopyWithImpl<_Calculated>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_CalculatedCopyWith<_$_Calculated> get copyWith =>
+      __$$_CalculatedCopyWithImpl<_$_Calculated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -242,6 +256,16 @@ class _$_Calculated implements _Calculated {
     required TResult Function() error,
   }) {
     return calculated(result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String result)? calculated,
+    TResult? Function()? error,
+  }) {
+    return calculated?.call(result);
   }
 
   @override
@@ -270,6 +294,16 @@ class _$_Calculated implements _Calculated {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Calculated value)? calculated,
+    TResult? Function(_Error value)? error,
+  }) {
+    return calculated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Calculated value)? calculated,
@@ -284,28 +318,26 @@ class _$_Calculated implements _Calculated {
 }
 
 abstract class _Calculated implements CalculatorState {
-  const factory _Calculated(String result) = _$_Calculated;
+  const factory _Calculated(final String result) = _$_Calculated;
 
-  String get result => throw _privateConstructorUsedError;
+  String get result;
   @JsonKey(ignore: true)
-  _$CalculatedCopyWith<_Calculated> get copyWith =>
+  _$$_CalculatedCopyWith<_$_Calculated> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ErrorCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
-      __$ErrorCopyWithImpl<$Res>;
+abstract class _$$_ErrorCopyWith<$Res> {
+  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
+      __$$_ErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res> extends _$CalculatorStateCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
-      : super(_value, (v) => _then(v as _Error));
-
-  @override
-  _Error get _value => super._value as _Error;
+class __$$_ErrorCopyWithImpl<$Res>
+    extends _$CalculatorStateCopyWithImpl<$Res, _$_Error>
+    implements _$$_ErrorCopyWith<$Res> {
+  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -320,7 +352,8 @@ class _$_Error implements _Error {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Error);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Error);
   }
 
   @override
@@ -334,6 +367,16 @@ class _$_Error implements _Error {
     required TResult Function() error,
   }) {
     return error();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String result)? calculated,
+    TResult? Function()? error,
+  }) {
+    return error?.call();
   }
 
   @override
@@ -358,6 +401,16 @@ class _$_Error implements _Error {
     required TResult Function(_Error value) error,
   }) {
     return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Calculated value)? calculated,
+    TResult? Function(_Error value)? error,
+  }) {
+    return error?.call(this);
   }
 
   @override

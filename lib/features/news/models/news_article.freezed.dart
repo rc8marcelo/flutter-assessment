@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'news_article.dart';
 
@@ -10,44 +12,11 @@ part of 'news_article.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 NewsArticle _$NewsArticleFromJson(Map<String, dynamic> json) {
   return _NewsArticle.fromJson(json);
 }
-
-/// @nodoc
-class _$NewsArticleTearOff {
-  const _$NewsArticleTearOff();
-
-  _NewsArticle call(
-      {required String url,
-      required String title,
-      required NewsSource source,
-      required DateTime publishedAt,
-      String? description,
-      String? urlToImage,
-      String? content,
-      String? author}) {
-    return _NewsArticle(
-      url: url,
-      title: title,
-      source: source,
-      publishedAt: publishedAt,
-      description: description,
-      urlToImage: urlToImage,
-      content: content,
-      author: author,
-    );
-  }
-
-  NewsArticle fromJson(Map<String, Object> json) {
-    return NewsArticle.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $NewsArticle = _$NewsArticleTearOff();
 
 /// @nodoc
 mixin _$NewsArticle {
@@ -70,7 +39,8 @@ mixin _$NewsArticle {
 abstract class $NewsArticleCopyWith<$Res> {
   factory $NewsArticleCopyWith(
           NewsArticle value, $Res Function(NewsArticle) then) =
-      _$NewsArticleCopyWithImpl<$Res>;
+      _$NewsArticleCopyWithImpl<$Res, NewsArticle>;
+  @useResult
   $Res call(
       {String url,
       String title,
@@ -85,75 +55,80 @@ abstract class $NewsArticleCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NewsArticleCopyWithImpl<$Res> implements $NewsArticleCopyWith<$Res> {
+class _$NewsArticleCopyWithImpl<$Res, $Val extends NewsArticle>
+    implements $NewsArticleCopyWith<$Res> {
   _$NewsArticleCopyWithImpl(this._value, this._then);
 
-  final NewsArticle _value;
   // ignore: unused_field
-  final $Res Function(NewsArticle) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? url = freezed,
-    Object? title = freezed,
-    Object? source = freezed,
-    Object? publishedAt = freezed,
+    Object? url = null,
+    Object? title = null,
+    Object? source = null,
+    Object? publishedAt = null,
     Object? description = freezed,
     Object? urlToImage = freezed,
     Object? content = freezed,
     Object? author = freezed,
   }) {
     return _then(_value.copyWith(
-      url: url == freezed
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      source: source == freezed
+      source: null == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as NewsSource,
-      publishedAt: publishedAt == freezed
+      publishedAt: null == publishedAt
           ? _value.publishedAt
           : publishedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      urlToImage: urlToImage == freezed
+      urlToImage: freezed == urlToImage
           ? _value.urlToImage
           : urlToImage // ignore: cast_nullable_to_non_nullable
               as String?,
-      content: content == freezed
+      content: freezed == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String?,
-      author: author == freezed
+      author: freezed == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $NewsSourceCopyWith<$Res> get source {
     return $NewsSourceCopyWith<$Res>(_value.source, (value) {
-      return _then(_value.copyWith(source: value));
+      return _then(_value.copyWith(source: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$NewsArticleCopyWith<$Res>
+abstract class _$$_NewsArticleCopyWith<$Res>
     implements $NewsArticleCopyWith<$Res> {
-  factory _$NewsArticleCopyWith(
-          _NewsArticle value, $Res Function(_NewsArticle) then) =
-      __$NewsArticleCopyWithImpl<$Res>;
+  factory _$$_NewsArticleCopyWith(
+          _$_NewsArticle value, $Res Function(_$_NewsArticle) then) =
+      __$$_NewsArticleCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String url,
       String title,
@@ -169,56 +144,55 @@ abstract class _$NewsArticleCopyWith<$Res>
 }
 
 /// @nodoc
-class __$NewsArticleCopyWithImpl<$Res> extends _$NewsArticleCopyWithImpl<$Res>
-    implements _$NewsArticleCopyWith<$Res> {
-  __$NewsArticleCopyWithImpl(
-      _NewsArticle _value, $Res Function(_NewsArticle) _then)
-      : super(_value, (v) => _then(v as _NewsArticle));
+class __$$_NewsArticleCopyWithImpl<$Res>
+    extends _$NewsArticleCopyWithImpl<$Res, _$_NewsArticle>
+    implements _$$_NewsArticleCopyWith<$Res> {
+  __$$_NewsArticleCopyWithImpl(
+      _$_NewsArticle _value, $Res Function(_$_NewsArticle) _then)
+      : super(_value, _then);
 
-  @override
-  _NewsArticle get _value => super._value as _NewsArticle;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? url = freezed,
-    Object? title = freezed,
-    Object? source = freezed,
-    Object? publishedAt = freezed,
+    Object? url = null,
+    Object? title = null,
+    Object? source = null,
+    Object? publishedAt = null,
     Object? description = freezed,
     Object? urlToImage = freezed,
     Object? content = freezed,
     Object? author = freezed,
   }) {
-    return _then(_NewsArticle(
-      url: url == freezed
+    return _then(_$_NewsArticle(
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      source: source == freezed
+      source: null == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as NewsSource,
-      publishedAt: publishedAt == freezed
+      publishedAt: null == publishedAt
           ? _value.publishedAt
           : publishedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      urlToImage: urlToImage == freezed
+      urlToImage: freezed == urlToImage
           ? _value.urlToImage
           : urlToImage // ignore: cast_nullable_to_non_nullable
               as String?,
-      content: content == freezed
+      content: freezed == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String?,
-      author: author == freezed
+      author: freezed == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -241,7 +215,7 @@ class _$_NewsArticle extends _NewsArticle {
       : super._();
 
   factory _$_NewsArticle.fromJson(Map<String, dynamic> json) =>
-      _$_$_NewsArticleFromJson(json);
+      _$$_NewsArticleFromJson(json);
 
   @override
   final String url;
@@ -268,85 +242,73 @@ class _$_NewsArticle extends _NewsArticle {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NewsArticle &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.source, source) ||
-                const DeepCollectionEquality().equals(other.source, source)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_NewsArticle &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.source, source) || other.source == source) &&
             (identical(other.publishedAt, publishedAt) ||
-                const DeepCollectionEquality()
-                    .equals(other.publishedAt, publishedAt)) &&
+                other.publishedAt == publishedAt) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                other.description == description) &&
             (identical(other.urlToImage, urlToImage) ||
-                const DeepCollectionEquality()
-                    .equals(other.urlToImage, urlToImage)) &&
-            (identical(other.content, content) ||
-                const DeepCollectionEquality()
-                    .equals(other.content, content)) &&
-            (identical(other.author, author) ||
-                const DeepCollectionEquality().equals(other.author, author)));
+                other.urlToImage == urlToImage) &&
+            (identical(other.content, content) || other.content == content) &&
+            (identical(other.author, author) || other.author == author));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(source) ^
-      const DeepCollectionEquality().hash(publishedAt) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(urlToImage) ^
-      const DeepCollectionEquality().hash(content) ^
-      const DeepCollectionEquality().hash(author);
 
   @JsonKey(ignore: true)
   @override
-  _$NewsArticleCopyWith<_NewsArticle> get copyWith =>
-      __$NewsArticleCopyWithImpl<_NewsArticle>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, url, title, source, publishedAt,
+      description, urlToImage, content, author);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_NewsArticleCopyWith<_$_NewsArticle> get copyWith =>
+      __$$_NewsArticleCopyWithImpl<_$_NewsArticle>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_NewsArticleToJson(this);
+    return _$$_NewsArticleToJson(
+      this,
+    );
   }
 }
 
 abstract class _NewsArticle extends NewsArticle {
   factory _NewsArticle(
-      {required String url,
-      required String title,
-      required NewsSource source,
-      required DateTime publishedAt,
-      String? description,
-      String? urlToImage,
-      String? content,
-      String? author}) = _$_NewsArticle;
+      {required final String url,
+      required final String title,
+      required final NewsSource source,
+      required final DateTime publishedAt,
+      final String? description,
+      final String? urlToImage,
+      final String? content,
+      final String? author}) = _$_NewsArticle;
   _NewsArticle._() : super._();
 
   factory _NewsArticle.fromJson(Map<String, dynamic> json) =
       _$_NewsArticle.fromJson;
 
   @override
-  String get url => throw _privateConstructorUsedError;
+  String get url;
   @override
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @override
-  NewsSource get source => throw _privateConstructorUsedError;
+  NewsSource get source;
   @override
-  DateTime get publishedAt => throw _privateConstructorUsedError;
+  DateTime get publishedAt;
   @override
-  String? get description => throw _privateConstructorUsedError;
+  String? get description;
   @override
-  String? get urlToImage => throw _privateConstructorUsedError;
+  String? get urlToImage;
   @override
-  String? get content => throw _privateConstructorUsedError;
+  String? get content;
   @override
-  String? get author => throw _privateConstructorUsedError;
+  String? get author;
   @override
   @JsonKey(ignore: true)
-  _$NewsArticleCopyWith<_NewsArticle> get copyWith =>
+  _$$_NewsArticleCopyWith<_$_NewsArticle> get copyWith =>
       throw _privateConstructorUsedError;
 }

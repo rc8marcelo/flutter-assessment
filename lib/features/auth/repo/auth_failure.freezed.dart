@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'auth_failure.dart';
 
@@ -10,29 +12,7 @@ part of 'auth_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AuthFailureTearOff {
-  const _$AuthFailureTearOff();
-
-  _SignInFailed signInFailed(String message) {
-    return _SignInFailed(
-      message,
-    );
-  }
-
-  _NoUser noUser() {
-    return const _NoUser();
-  }
-
-  _NoAccessToken noAccessToken() {
-    return const _NoAccessToken();
-  }
-}
-
-/// @nodoc
-const $AuthFailure = _$AuthFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AuthFailure {
@@ -41,6 +21,13 @@ mixin _$AuthFailure {
     required TResult Function(String message) signInFailed,
     required TResult Function() noUser,
     required TResult Function() noAccessToken,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String message)? signInFailed,
+    TResult? Function()? noUser,
+    TResult? Function()? noAccessToken,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +46,13 @@ mixin _$AuthFailure {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_NoUser value)? noUser,
+    TResult? Function(_NoAccessToken value)? noAccessToken,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInFailed value)? signInFailed,
     TResult Function(_NoUser value)? noUser,
@@ -72,42 +66,44 @@ mixin _$AuthFailure {
 abstract class $AuthFailureCopyWith<$Res> {
   factory $AuthFailureCopyWith(
           AuthFailure value, $Res Function(AuthFailure) then) =
-      _$AuthFailureCopyWithImpl<$Res>;
+      _$AuthFailureCopyWithImpl<$Res, AuthFailure>;
 }
 
 /// @nodoc
-class _$AuthFailureCopyWithImpl<$Res> implements $AuthFailureCopyWith<$Res> {
+class _$AuthFailureCopyWithImpl<$Res, $Val extends AuthFailure>
+    implements $AuthFailureCopyWith<$Res> {
   _$AuthFailureCopyWithImpl(this._value, this._then);
 
-  final AuthFailure _value;
   // ignore: unused_field
-  final $Res Function(AuthFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$SignInFailedCopyWith<$Res> {
-  factory _$SignInFailedCopyWith(
-          _SignInFailed value, $Res Function(_SignInFailed) then) =
-      __$SignInFailedCopyWithImpl<$Res>;
+abstract class _$$_SignInFailedCopyWith<$Res> {
+  factory _$$_SignInFailedCopyWith(
+          _$_SignInFailed value, $Res Function(_$_SignInFailed) then) =
+      __$$_SignInFailedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$SignInFailedCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
-    implements _$SignInFailedCopyWith<$Res> {
-  __$SignInFailedCopyWithImpl(
-      _SignInFailed _value, $Res Function(_SignInFailed) _then)
-      : super(_value, (v) => _then(v as _SignInFailed));
+class __$$_SignInFailedCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$_SignInFailed>
+    implements _$$_SignInFailedCopyWith<$Res> {
+  __$$_SignInFailedCopyWithImpl(
+      _$_SignInFailed _value, $Res Function(_$_SignInFailed) _then)
+      : super(_value, _then);
 
-  @override
-  _SignInFailed get _value => super._value as _SignInFailed;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
-    return _then(_SignInFailed(
-      message == freezed
+    return _then(_$_SignInFailed(
+      null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -131,19 +127,19 @@ class _$_SignInFailed implements _SignInFailed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SignInFailed &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+        (other.runtimeType == runtimeType &&
+            other is _$_SignInFailed &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
-  _$SignInFailedCopyWith<_SignInFailed> get copyWith =>
-      __$SignInFailedCopyWithImpl<_SignInFailed>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_SignInFailedCopyWith<_$_SignInFailed> get copyWith =>
+      __$$_SignInFailedCopyWithImpl<_$_SignInFailed>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -153,6 +149,16 @@ class _$_SignInFailed implements _SignInFailed {
     required TResult Function() noAccessToken,
   }) {
     return signInFailed(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String message)? signInFailed,
+    TResult? Function()? noUser,
+    TResult? Function()? noAccessToken,
+  }) {
+    return signInFailed?.call(message);
   }
 
   @override
@@ -181,6 +187,16 @@ class _$_SignInFailed implements _SignInFailed {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_NoUser value)? noUser,
+    TResult? Function(_NoAccessToken value)? noAccessToken,
+  }) {
+    return signInFailed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInFailed value)? signInFailed,
     TResult Function(_NoUser value)? noUser,
@@ -195,28 +211,26 @@ class _$_SignInFailed implements _SignInFailed {
 }
 
 abstract class _SignInFailed implements AuthFailure {
-  const factory _SignInFailed(String message) = _$_SignInFailed;
+  const factory _SignInFailed(final String message) = _$_SignInFailed;
 
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @JsonKey(ignore: true)
-  _$SignInFailedCopyWith<_SignInFailed> get copyWith =>
+  _$$_SignInFailedCopyWith<_$_SignInFailed> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$NoUserCopyWith<$Res> {
-  factory _$NoUserCopyWith(_NoUser value, $Res Function(_NoUser) then) =
-      __$NoUserCopyWithImpl<$Res>;
+abstract class _$$_NoUserCopyWith<$Res> {
+  factory _$$_NoUserCopyWith(_$_NoUser value, $Res Function(_$_NoUser) then) =
+      __$$_NoUserCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NoUserCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
-    implements _$NoUserCopyWith<$Res> {
-  __$NoUserCopyWithImpl(_NoUser _value, $Res Function(_NoUser) _then)
-      : super(_value, (v) => _then(v as _NoUser));
-
-  @override
-  _NoUser get _value => super._value as _NoUser;
+class __$$_NoUserCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$_NoUser>
+    implements _$$_NoUserCopyWith<$Res> {
+  __$$_NoUserCopyWithImpl(_$_NoUser _value, $Res Function(_$_NoUser) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -231,7 +245,8 @@ class _$_NoUser implements _NoUser {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NoUser);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_NoUser);
   }
 
   @override
@@ -245,6 +260,16 @@ class _$_NoUser implements _NoUser {
     required TResult Function() noAccessToken,
   }) {
     return noUser();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String message)? signInFailed,
+    TResult? Function()? noUser,
+    TResult? Function()? noAccessToken,
+  }) {
+    return noUser?.call();
   }
 
   @override
@@ -273,6 +298,16 @@ class _$_NoUser implements _NoUser {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_NoUser value)? noUser,
+    TResult? Function(_NoAccessToken value)? noAccessToken,
+  }) {
+    return noUser?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInFailed value)? signInFailed,
     TResult Function(_NoUser value)? noUser,
@@ -291,21 +326,19 @@ abstract class _NoUser implements AuthFailure {
 }
 
 /// @nodoc
-abstract class _$NoAccessTokenCopyWith<$Res> {
-  factory _$NoAccessTokenCopyWith(
-          _NoAccessToken value, $Res Function(_NoAccessToken) then) =
-      __$NoAccessTokenCopyWithImpl<$Res>;
+abstract class _$$_NoAccessTokenCopyWith<$Res> {
+  factory _$$_NoAccessTokenCopyWith(
+          _$_NoAccessToken value, $Res Function(_$_NoAccessToken) then) =
+      __$$_NoAccessTokenCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NoAccessTokenCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
-    implements _$NoAccessTokenCopyWith<$Res> {
-  __$NoAccessTokenCopyWithImpl(
-      _NoAccessToken _value, $Res Function(_NoAccessToken) _then)
-      : super(_value, (v) => _then(v as _NoAccessToken));
-
-  @override
-  _NoAccessToken get _value => super._value as _NoAccessToken;
+class __$$_NoAccessTokenCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$_NoAccessToken>
+    implements _$$_NoAccessTokenCopyWith<$Res> {
+  __$$_NoAccessTokenCopyWithImpl(
+      _$_NoAccessToken _value, $Res Function(_$_NoAccessToken) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -320,7 +353,8 @@ class _$_NoAccessToken implements _NoAccessToken {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NoAccessToken);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_NoAccessToken);
   }
 
   @override
@@ -334,6 +368,16 @@ class _$_NoAccessToken implements _NoAccessToken {
     required TResult Function() noAccessToken,
   }) {
     return noAccessToken();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String message)? signInFailed,
+    TResult? Function()? noUser,
+    TResult? Function()? noAccessToken,
+  }) {
+    return noAccessToken?.call();
   }
 
   @override
@@ -358,6 +402,16 @@ class _$_NoAccessToken implements _NoAccessToken {
     required TResult Function(_NoAccessToken value) noAccessToken,
   }) {
     return noAccessToken(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SignInFailed value)? signInFailed,
+    TResult? Function(_NoUser value)? noUser,
+    TResult? Function(_NoAccessToken value)? noAccessToken,
+  }) {
+    return noAccessToken?.call(this);
   }
 
   @override

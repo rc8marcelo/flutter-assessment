@@ -6,8 +6,11 @@ import 'injection.config.dart';
 ///This is the instance of our service locator [GetIt].
 final GetIt locator = GetIt.instance;
 
+@InjectableInit(
+  initializerName: 'init', // default
+  preferRelativeImports: true, // default
+  asExtension: true, // default
+)
+
 ///Configures [GetIt] to setup all dependencies as needed.
-@injectableInit
-void configureInjection() {
-  $initGetIt(locator);
-}
+void configureDependencies() => locator.init();

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import '../../core/widgets/text_snackbar.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -9,6 +10,7 @@ const _errNoContent = 'No content.';
 const _btnFullArticle = 'Read the full article';
 const _errCantLoad = 'Error: cannot load link.';
 
+@RoutePage()
 class NewsDetailsScreen extends StatelessWidget {
   //The article to display on this screen
   final NewsArticle article;
@@ -49,15 +51,17 @@ extension _Widgets on NewsDetailsScreen {
             children: [
               Text(
                 article.title,
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 8),
               Text(
                 article.author ?? article.source.name,
-                style: Theme.of(context).textTheme.subtitle1,
+                style: Theme.of(context).textTheme.titleMedium,
               ),
-              Text(article.publishedAt.asFormattedDateTime,
-                  style: Theme.of(context).textTheme.caption),
+              Text(
+                article.publishedAt.asFormattedDateTime,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
             ],
           );
         },
@@ -85,7 +89,7 @@ extension _Widgets on NewsDetailsScreen {
         builder: (context) {
           return Text(
             article.content ?? _errNoContent,
-            style: Theme.of(context).textTheme.bodyText2,
+            style: Theme.of(context).textTheme.bodyMedium,
           );
         },
       );
@@ -96,7 +100,7 @@ extension _Widgets on NewsDetailsScreen {
           return GestureDetector(
             child: Text(
               _btnFullArticle,
-              style: Theme.of(context).textTheme.button!.copyWith(
+              style: Theme.of(context).textTheme.labelLarge!.copyWith(
                     color: Colors.blue[400],
                   ),
             ),
@@ -104,6 +108,7 @@ extension _Widgets on NewsDetailsScreen {
               if (await canLaunch(article.url)) {
                 await launch(article.url);
               } else {
+                // ignore: use_build_context_synchronously
                 ScaffoldMessenger.of(context).showSnackBar(
                   TextSnackbar(_errCantLoad),
                 );

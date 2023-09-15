@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'map_bloc.dart';
 
@@ -10,27 +12,7 @@ part of 'map_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$MapEventTearOff {
-  const _$MapEventTearOff();
-
-  _GetUserLocation getUserLocation() {
-    return const _GetUserLocation();
-  }
-
-  _GetRandomLocationTapped getRandomLocationTapped() {
-    return const _GetRandomLocationTapped();
-  }
-
-  _GetDirectionsTapped getDirectionsTapped() {
-    return const _GetDirectionsTapped();
-  }
-}
-
-/// @nodoc
-const $MapEvent = _$MapEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$MapEvent {
@@ -39,6 +21,13 @@ mixin _$MapEvent {
     required TResult Function() getUserLocation,
     required TResult Function() getRandomLocationTapped,
     required TResult Function() getDirectionsTapped,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getUserLocation,
+    TResult? Function()? getRandomLocationTapped,
+    TResult? Function()? getDirectionsTapped,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +47,13 @@ mixin _$MapEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetUserLocation value)? getUserLocation,
+    TResult? Function(_GetRandomLocationTapped value)? getRandomLocationTapped,
+    TResult? Function(_GetDirectionsTapped value)? getDirectionsTapped,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetUserLocation value)? getUserLocation,
     TResult Function(_GetRandomLocationTapped value)? getRandomLocationTapped,
@@ -70,34 +66,34 @@ mixin _$MapEvent {
 /// @nodoc
 abstract class $MapEventCopyWith<$Res> {
   factory $MapEventCopyWith(MapEvent value, $Res Function(MapEvent) then) =
-      _$MapEventCopyWithImpl<$Res>;
+      _$MapEventCopyWithImpl<$Res, MapEvent>;
 }
 
 /// @nodoc
-class _$MapEventCopyWithImpl<$Res> implements $MapEventCopyWith<$Res> {
+class _$MapEventCopyWithImpl<$Res, $Val extends MapEvent>
+    implements $MapEventCopyWith<$Res> {
   _$MapEventCopyWithImpl(this._value, this._then);
 
-  final MapEvent _value;
   // ignore: unused_field
-  final $Res Function(MapEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$GetUserLocationCopyWith<$Res> {
-  factory _$GetUserLocationCopyWith(
-          _GetUserLocation value, $Res Function(_GetUserLocation) then) =
-      __$GetUserLocationCopyWithImpl<$Res>;
+abstract class _$$_GetUserLocationCopyWith<$Res> {
+  factory _$$_GetUserLocationCopyWith(
+          _$_GetUserLocation value, $Res Function(_$_GetUserLocation) then) =
+      __$$_GetUserLocationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$GetUserLocationCopyWithImpl<$Res> extends _$MapEventCopyWithImpl<$Res>
-    implements _$GetUserLocationCopyWith<$Res> {
-  __$GetUserLocationCopyWithImpl(
-      _GetUserLocation _value, $Res Function(_GetUserLocation) _then)
-      : super(_value, (v) => _then(v as _GetUserLocation));
-
-  @override
-  _GetUserLocation get _value => super._value as _GetUserLocation;
+class __$$_GetUserLocationCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$_GetUserLocation>
+    implements _$$_GetUserLocationCopyWith<$Res> {
+  __$$_GetUserLocationCopyWithImpl(
+      _$_GetUserLocation _value, $Res Function(_$_GetUserLocation) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -112,7 +108,8 @@ class _$_GetUserLocation implements _GetUserLocation {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _GetUserLocation);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_GetUserLocation);
   }
 
   @override
@@ -126,6 +123,16 @@ class _$_GetUserLocation implements _GetUserLocation {
     required TResult Function() getDirectionsTapped,
   }) {
     return getUserLocation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getUserLocation,
+    TResult? Function()? getRandomLocationTapped,
+    TResult? Function()? getDirectionsTapped,
+  }) {
+    return getUserLocation?.call();
   }
 
   @override
@@ -155,6 +162,16 @@ class _$_GetUserLocation implements _GetUserLocation {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetUserLocation value)? getUserLocation,
+    TResult? Function(_GetRandomLocationTapped value)? getRandomLocationTapped,
+    TResult? Function(_GetDirectionsTapped value)? getDirectionsTapped,
+  }) {
+    return getUserLocation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetUserLocation value)? getUserLocation,
     TResult Function(_GetRandomLocationTapped value)? getRandomLocationTapped,
@@ -173,23 +190,19 @@ abstract class _GetUserLocation implements MapEvent {
 }
 
 /// @nodoc
-abstract class _$GetRandomLocationTappedCopyWith<$Res> {
-  factory _$GetRandomLocationTappedCopyWith(_GetRandomLocationTapped value,
-          $Res Function(_GetRandomLocationTapped) then) =
-      __$GetRandomLocationTappedCopyWithImpl<$Res>;
+abstract class _$$_GetRandomLocationTappedCopyWith<$Res> {
+  factory _$$_GetRandomLocationTappedCopyWith(_$_GetRandomLocationTapped value,
+          $Res Function(_$_GetRandomLocationTapped) then) =
+      __$$_GetRandomLocationTappedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$GetRandomLocationTappedCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res>
-    implements _$GetRandomLocationTappedCopyWith<$Res> {
-  __$GetRandomLocationTappedCopyWithImpl(_GetRandomLocationTapped _value,
-      $Res Function(_GetRandomLocationTapped) _then)
-      : super(_value, (v) => _then(v as _GetRandomLocationTapped));
-
-  @override
-  _GetRandomLocationTapped get _value =>
-      super._value as _GetRandomLocationTapped;
+class __$$_GetRandomLocationTappedCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$_GetRandomLocationTapped>
+    implements _$$_GetRandomLocationTappedCopyWith<$Res> {
+  __$$_GetRandomLocationTappedCopyWithImpl(_$_GetRandomLocationTapped _value,
+      $Res Function(_$_GetRandomLocationTapped) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -204,7 +217,9 @@ class _$_GetRandomLocationTapped implements _GetRandomLocationTapped {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _GetRandomLocationTapped);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_GetRandomLocationTapped);
   }
 
   @override
@@ -218,6 +233,16 @@ class _$_GetRandomLocationTapped implements _GetRandomLocationTapped {
     required TResult Function() getDirectionsTapped,
   }) {
     return getRandomLocationTapped();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getUserLocation,
+    TResult? Function()? getRandomLocationTapped,
+    TResult? Function()? getDirectionsTapped,
+  }) {
+    return getRandomLocationTapped?.call();
   }
 
   @override
@@ -247,6 +272,16 @@ class _$_GetRandomLocationTapped implements _GetRandomLocationTapped {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetUserLocation value)? getUserLocation,
+    TResult? Function(_GetRandomLocationTapped value)? getRandomLocationTapped,
+    TResult? Function(_GetDirectionsTapped value)? getDirectionsTapped,
+  }) {
+    return getRandomLocationTapped?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetUserLocation value)? getUserLocation,
     TResult Function(_GetRandomLocationTapped value)? getRandomLocationTapped,
@@ -265,22 +300,19 @@ abstract class _GetRandomLocationTapped implements MapEvent {
 }
 
 /// @nodoc
-abstract class _$GetDirectionsTappedCopyWith<$Res> {
-  factory _$GetDirectionsTappedCopyWith(_GetDirectionsTapped value,
-          $Res Function(_GetDirectionsTapped) then) =
-      __$GetDirectionsTappedCopyWithImpl<$Res>;
+abstract class _$$_GetDirectionsTappedCopyWith<$Res> {
+  factory _$$_GetDirectionsTappedCopyWith(_$_GetDirectionsTapped value,
+          $Res Function(_$_GetDirectionsTapped) then) =
+      __$$_GetDirectionsTappedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$GetDirectionsTappedCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res>
-    implements _$GetDirectionsTappedCopyWith<$Res> {
-  __$GetDirectionsTappedCopyWithImpl(
-      _GetDirectionsTapped _value, $Res Function(_GetDirectionsTapped) _then)
-      : super(_value, (v) => _then(v as _GetDirectionsTapped));
-
-  @override
-  _GetDirectionsTapped get _value => super._value as _GetDirectionsTapped;
+class __$$_GetDirectionsTappedCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$_GetDirectionsTapped>
+    implements _$$_GetDirectionsTappedCopyWith<$Res> {
+  __$$_GetDirectionsTappedCopyWithImpl(_$_GetDirectionsTapped _value,
+      $Res Function(_$_GetDirectionsTapped) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -295,7 +327,8 @@ class _$_GetDirectionsTapped implements _GetDirectionsTapped {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _GetDirectionsTapped);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_GetDirectionsTapped);
   }
 
   @override
@@ -309,6 +342,16 @@ class _$_GetDirectionsTapped implements _GetDirectionsTapped {
     required TResult Function() getDirectionsTapped,
   }) {
     return getDirectionsTapped();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getUserLocation,
+    TResult? Function()? getRandomLocationTapped,
+    TResult? Function()? getDirectionsTapped,
+  }) {
+    return getDirectionsTapped?.call();
   }
 
   @override
@@ -338,6 +381,16 @@ class _$_GetDirectionsTapped implements _GetDirectionsTapped {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetUserLocation value)? getUserLocation,
+    TResult? Function(_GetRandomLocationTapped value)? getRandomLocationTapped,
+    TResult? Function(_GetDirectionsTapped value)? getDirectionsTapped,
+  }) {
+    return getDirectionsTapped?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetUserLocation value)? getUserLocation,
     TResult Function(_GetRandomLocationTapped value)? getRandomLocationTapped,
@@ -354,33 +407,6 @@ class _$_GetDirectionsTapped implements _GetDirectionsTapped {
 abstract class _GetDirectionsTapped implements MapEvent {
   const factory _GetDirectionsTapped() = _$_GetDirectionsTapped;
 }
-
-/// @nodoc
-class _$MapStateTearOff {
-  const _$MapStateTearOff();
-
-  _MapState call(
-      {required bool isLoading,
-      required LatLng userLocation,
-      required LatLng randomLocation,
-      required bool shouldShowDirections,
-      required Option<MapsFailure> failure,
-      required Option<Directions> directions,
-      required Map<MarkerId, Marker> markers}) {
-    return _MapState(
-      isLoading: isLoading,
-      userLocation: userLocation,
-      randomLocation: randomLocation,
-      shouldShowDirections: shouldShowDirections,
-      failure: failure,
-      directions: directions,
-      markers: markers,
-    );
-  }
-}
-
-/// @nodoc
-const $MapState = _$MapStateTearOff();
 
 /// @nodoc
 mixin _$MapState {
@@ -400,7 +426,8 @@ mixin _$MapState {
 /// @nodoc
 abstract class $MapStateCopyWith<$Res> {
   factory $MapStateCopyWith(MapState value, $Res Function(MapState) then) =
-      _$MapStateCopyWithImpl<$Res>;
+      _$MapStateCopyWithImpl<$Res, MapState>;
+  @useResult
   $Res call(
       {bool isLoading,
       LatLng userLocation,
@@ -412,61 +439,66 @@ abstract class $MapStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MapStateCopyWithImpl<$Res> implements $MapStateCopyWith<$Res> {
+class _$MapStateCopyWithImpl<$Res, $Val extends MapState>
+    implements $MapStateCopyWith<$Res> {
   _$MapStateCopyWithImpl(this._value, this._then);
 
-  final MapState _value;
   // ignore: unused_field
-  final $Res Function(MapState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = freezed,
-    Object? userLocation = freezed,
-    Object? randomLocation = freezed,
-    Object? shouldShowDirections = freezed,
-    Object? failure = freezed,
-    Object? directions = freezed,
-    Object? markers = freezed,
+    Object? isLoading = null,
+    Object? userLocation = null,
+    Object? randomLocation = null,
+    Object? shouldShowDirections = null,
+    Object? failure = null,
+    Object? directions = null,
+    Object? markers = null,
   }) {
     return _then(_value.copyWith(
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      userLocation: userLocation == freezed
+      userLocation: null == userLocation
           ? _value.userLocation
           : userLocation // ignore: cast_nullable_to_non_nullable
               as LatLng,
-      randomLocation: randomLocation == freezed
+      randomLocation: null == randomLocation
           ? _value.randomLocation
           : randomLocation // ignore: cast_nullable_to_non_nullable
               as LatLng,
-      shouldShowDirections: shouldShowDirections == freezed
+      shouldShowDirections: null == shouldShowDirections
           ? _value.shouldShowDirections
           : shouldShowDirections // ignore: cast_nullable_to_non_nullable
               as bool,
-      failure: failure == freezed
+      failure: null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as Option<MapsFailure>,
-      directions: directions == freezed
+      directions: null == directions
           ? _value.directions
           : directions // ignore: cast_nullable_to_non_nullable
               as Option<Directions>,
-      markers: markers == freezed
+      markers: null == markers
           ? _value.markers
           : markers // ignore: cast_nullable_to_non_nullable
               as Map<MarkerId, Marker>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$MapStateCopyWith<$Res> implements $MapStateCopyWith<$Res> {
-  factory _$MapStateCopyWith(_MapState value, $Res Function(_MapState) then) =
-      __$MapStateCopyWithImpl<$Res>;
+abstract class _$$_MapStateCopyWith<$Res> implements $MapStateCopyWith<$Res> {
+  factory _$$_MapStateCopyWith(
+          _$_MapState value, $Res Function(_$_MapState) then) =
+      __$$_MapStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool isLoading,
       LatLng userLocation,
@@ -478,51 +510,51 @@ abstract class _$MapStateCopyWith<$Res> implements $MapStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$MapStateCopyWithImpl<$Res> extends _$MapStateCopyWithImpl<$Res>
-    implements _$MapStateCopyWith<$Res> {
-  __$MapStateCopyWithImpl(_MapState _value, $Res Function(_MapState) _then)
-      : super(_value, (v) => _then(v as _MapState));
+class __$$_MapStateCopyWithImpl<$Res>
+    extends _$MapStateCopyWithImpl<$Res, _$_MapState>
+    implements _$$_MapStateCopyWith<$Res> {
+  __$$_MapStateCopyWithImpl(
+      _$_MapState _value, $Res Function(_$_MapState) _then)
+      : super(_value, _then);
 
-  @override
-  _MapState get _value => super._value as _MapState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = freezed,
-    Object? userLocation = freezed,
-    Object? randomLocation = freezed,
-    Object? shouldShowDirections = freezed,
-    Object? failure = freezed,
-    Object? directions = freezed,
-    Object? markers = freezed,
+    Object? isLoading = null,
+    Object? userLocation = null,
+    Object? randomLocation = null,
+    Object? shouldShowDirections = null,
+    Object? failure = null,
+    Object? directions = null,
+    Object? markers = null,
   }) {
-    return _then(_MapState(
-      isLoading: isLoading == freezed
+    return _then(_$_MapState(
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      userLocation: userLocation == freezed
+      userLocation: null == userLocation
           ? _value.userLocation
           : userLocation // ignore: cast_nullable_to_non_nullable
               as LatLng,
-      randomLocation: randomLocation == freezed
+      randomLocation: null == randomLocation
           ? _value.randomLocation
           : randomLocation // ignore: cast_nullable_to_non_nullable
               as LatLng,
-      shouldShowDirections: shouldShowDirections == freezed
+      shouldShowDirections: null == shouldShowDirections
           ? _value.shouldShowDirections
           : shouldShowDirections // ignore: cast_nullable_to_non_nullable
               as bool,
-      failure: failure == freezed
+      failure: null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as Option<MapsFailure>,
-      directions: directions == freezed
+      directions: null == directions
           ? _value.directions
           : directions // ignore: cast_nullable_to_non_nullable
               as Option<Directions>,
-      markers: markers == freezed
-          ? _value.markers
+      markers: null == markers
+          ? _value._markers
           : markers // ignore: cast_nullable_to_non_nullable
               as Map<MarkerId, Marker>,
     ));
@@ -539,7 +571,8 @@ class _$_MapState implements _MapState {
       required this.shouldShowDirections,
       required this.failure,
       required this.directions,
-      required this.markers});
+      required final Map<MarkerId, Marker> markers})
+      : _markers = markers;
 
   @override
   final bool isLoading;
@@ -553,8 +586,13 @@ class _$_MapState implements _MapState {
   final Option<MapsFailure> failure;
   @override
   final Option<Directions> directions;
+  final Map<MarkerId, Marker> _markers;
   @override
-  final Map<MarkerId, Marker> markers;
+  Map<MarkerId, Marker> get markers {
+    if (_markers is EqualUnmodifiableMapView) return _markers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_markers);
+  }
 
   @override
   String toString() {
@@ -564,72 +602,66 @@ class _$_MapState implements _MapState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _MapState &&
+        (other.runtimeType == runtimeType &&
+            other is _$_MapState &&
             (identical(other.isLoading, isLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLoading, isLoading)) &&
+                other.isLoading == isLoading) &&
             (identical(other.userLocation, userLocation) ||
-                const DeepCollectionEquality()
-                    .equals(other.userLocation, userLocation)) &&
+                other.userLocation == userLocation) &&
             (identical(other.randomLocation, randomLocation) ||
-                const DeepCollectionEquality()
-                    .equals(other.randomLocation, randomLocation)) &&
+                other.randomLocation == randomLocation) &&
             (identical(other.shouldShowDirections, shouldShowDirections) ||
-                const DeepCollectionEquality().equals(
-                    other.shouldShowDirections, shouldShowDirections)) &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality()
-                    .equals(other.failure, failure)) &&
+                other.shouldShowDirections == shouldShowDirections) &&
+            (identical(other.failure, failure) || other.failure == failure) &&
             (identical(other.directions, directions) ||
-                const DeepCollectionEquality()
-                    .equals(other.directions, directions)) &&
-            (identical(other.markers, markers) ||
-                const DeepCollectionEquality().equals(other.markers, markers)));
+                other.directions == directions) &&
+            const DeepCollectionEquality().equals(other._markers, _markers));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(userLocation) ^
-      const DeepCollectionEquality().hash(randomLocation) ^
-      const DeepCollectionEquality().hash(shouldShowDirections) ^
-      const DeepCollectionEquality().hash(failure) ^
-      const DeepCollectionEquality().hash(directions) ^
-      const DeepCollectionEquality().hash(markers);
+  int get hashCode => Object.hash(
+      runtimeType,
+      isLoading,
+      userLocation,
+      randomLocation,
+      shouldShowDirections,
+      failure,
+      directions,
+      const DeepCollectionEquality().hash(_markers));
 
   @JsonKey(ignore: true)
   @override
-  _$MapStateCopyWith<_MapState> get copyWith =>
-      __$MapStateCopyWithImpl<_MapState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_MapStateCopyWith<_$_MapState> get copyWith =>
+      __$$_MapStateCopyWithImpl<_$_MapState>(this, _$identity);
 }
 
 abstract class _MapState implements MapState {
   const factory _MapState(
-      {required bool isLoading,
-      required LatLng userLocation,
-      required LatLng randomLocation,
-      required bool shouldShowDirections,
-      required Option<MapsFailure> failure,
-      required Option<Directions> directions,
-      required Map<MarkerId, Marker> markers}) = _$_MapState;
+      {required final bool isLoading,
+      required final LatLng userLocation,
+      required final LatLng randomLocation,
+      required final bool shouldShowDirections,
+      required final Option<MapsFailure> failure,
+      required final Option<Directions> directions,
+      required final Map<MarkerId, Marker> markers}) = _$_MapState;
 
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @override
-  LatLng get userLocation => throw _privateConstructorUsedError;
+  LatLng get userLocation;
   @override
-  LatLng get randomLocation => throw _privateConstructorUsedError;
+  LatLng get randomLocation;
   @override
-  bool get shouldShowDirections => throw _privateConstructorUsedError;
+  bool get shouldShowDirections;
   @override
-  Option<MapsFailure> get failure => throw _privateConstructorUsedError;
+  Option<MapsFailure> get failure;
   @override
-  Option<Directions> get directions => throw _privateConstructorUsedError;
+  Option<Directions> get directions;
   @override
-  Map<MarkerId, Marker> get markers => throw _privateConstructorUsedError;
+  Map<MarkerId, Marker> get markers;
   @override
   @JsonKey(ignore: true)
-  _$MapStateCopyWith<_MapState> get copyWith =>
+  _$$_MapStateCopyWith<_$_MapState> get copyWith =>
       throw _privateConstructorUsedError;
 }

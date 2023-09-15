@@ -27,7 +27,7 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
     signingConfigs {
         debug {
             storeFile file("$rootDir/app/genkeystore.keystore")
@@ -44,8 +44,8 @@ android {
 
     defaultConfig {
         applicationId "com.rmarcelo.assessment"
-        minSdkVersion 20
-        targetSdkVersion 30
+        minSdkVersion 21
+        targetSdkVersion 33
         multiDexEnabled true
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName

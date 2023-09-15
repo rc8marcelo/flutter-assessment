@@ -1,12 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assessment/core/routing/router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../core/routing/router.gr.dart';
 import '../auth/cubit/auth_cubit.dart';
 
 const _splashScreen = 'Splash Screen';
 
+@RoutePage()
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -35,7 +36,7 @@ extension _Widgets on SplashScreen {
             textAlign: TextAlign.center,
             style: Theme.of(context)
                 .textTheme
-                .headline3!
+                .displaySmall!
                 .copyWith(color: Colors.white70),
           ),
         ),

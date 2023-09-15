@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assessment/core/routing/router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kt_dart/kt.dart';
 
 import '../../core/di/injection.dart';
-import '../../core/routing/router.gr.dart';
 import '../../core/widgets/text_snackbar.dart';
 import 'cubit/news_cubit.dart';
 import 'models/news_article.dart';
@@ -13,6 +13,7 @@ import 'repo/news_failure.dart';
 const _errorMsg = 'Fetching failed.';
 const _retryMsg = 'Retry';
 
+@RoutePage()
 class NewsFeedScreen extends StatelessWidget {
   const NewsFeedScreen({Key? key}) : super(key: key);
 
@@ -100,10 +101,11 @@ extension _Widgets on NewsFeedScreen {
               final article = articles.get(index);
               return _articleCard(context, article);
             }
+            return null;
           })),
           SliverFillRemaining(
-            child: _navigationButtons(currentPage, totalArticles),
             hasScrollBody: false,
+            child: _navigationButtons(currentPage, totalArticles),
           )
         ],
       );
@@ -115,7 +117,7 @@ extension _Widgets on NewsFeedScreen {
           children: [
             Text(
               _errorMsg,
-              style: Theme.of(context).textTheme.headline2,
+              style: Theme.of(context).textTheme.displayMedium,
             ),
             const SizedBox(height: 16),
             ElevatedButton(
@@ -140,11 +142,11 @@ extension _Widgets on NewsFeedScreen {
           trailing: const Icon(Icons.chevron_right),
           title: Text(
             article.title,
-            style: Theme.of(context).textTheme.bodyText1,
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
           subtitle: Text(
             article.source.name,
-            style: Theme.of(context).textTheme.bodyText2,
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
           onTap: () {
             context.pushRoute(NewsDetailsRoute(article: article));
@@ -191,7 +193,7 @@ extension _Widgets on NewsFeedScreen {
         text,
         style: Theme.of(context)
             .textTheme
-            .button!
+            .labelLarge!
             .copyWith(color: Colors.blue[400]),
       );
 }

@@ -1,9 +1,9 @@
+import 'package:auth_buttons/auth_buttons.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assessment/core/routing/router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:social_auth_buttons/social_auth_buttons.dart';
 
-import '../../core/routing/router.gr.dart';
 import '../../core/widgets/text_snackbar.dart';
 import 'cubit/auth_cubit.dart';
 import 'repo/auth_failure.dart';
@@ -12,6 +12,7 @@ const _title = 'Coderbyte Technical Assessment';
 const _anonSignIn = 'Anonymous Sign In';
 const _msgSignIn = 'Login';
 
+@RoutePage()
 class SignInScreen extends StatelessWidget {
   const SignInScreen({Key? key}) : super(key: key);
 
